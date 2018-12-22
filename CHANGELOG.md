@@ -1,5 +1,9 @@
 # Change Log
 All notable changes to this project will be documented in this file.
 
+## [0.2.0] 2018-12-22
+### Changed
+- Deploy with CI
+
 ## [0.1.0] - 2018-12-22
 Project start
