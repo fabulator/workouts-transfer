@@ -1,0 +1,58 @@
+{
+  "name": "workouts-transfer",
+  "version": "0.1.0",
+  "description": "Workouts transfer between services as inversify modules.",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "author": "Michal Ozogán <michal@ozogan.eu>",
+  "license": "Apache-2.0",
+  "keywords": [
+    "personal",
+    "syncing"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/fabulator/workouts-transfer.git"
+  },
+  "bugs": {
+    "url": "https://github.com/fabulator/workouts-transfer/issues"
+  },
+  "homepage": "https://github.com/fabulator/workouts-transfer",
+  "scripts": {
+    "lint": "eslint --ext .ts ./src ./tests",
+    "lint:export": "npm run lint -- -o ./tests_results/checkstyle/js-checkstyle.xml -f checkstyle",
+    "tsc": "tsc --noEmit",
+    "develop": "tsc --watch",
+    "test": "jest",
+    "build": "tsc",
+    "test:build": "npm run test -- --config jest.config.build.js",
+    "test:all": "npm run lint && npm run tsc && npm run test",
+    "prepublishOnly": "npm run build && npm run test:build",
+    "release": "semantic-release"
+  },
+  "devDependencies": {
+    "@socifi/eslint-config": "^2.5.0",
+    "@socifi/jest-config": "^2.2.0",
+    "@socifi/rollup-config": "^2.0.1",
+    "@types/jest": "^23.3.10",
+    "@types/luxon": "^1.4.1",
+    "@types/mathjs": "^4.4.3",
+    "cross-fetch": "^2.2.3",
+    "ts-jest": "^23.10.5",
+    "semantic-release-config-fabulator": "^1.0.3",
+    "husky": "^1.2.1",
+    "@socifi/commitlint-config": "^1.0.0"
+  },
+  "dependencies": {
+    "endomondo-api-handler": "^2.1.0-beta.1",
+    "fitbit-api-handler": "^2.1.0-beta.1",
+    "fitness-libraries": "^0.2.0",
+    "fitness-models": "^0.2.0",
+    "garmin-api-handler": "^0.1.2",
+    "inversify": "^5.0.1",
+    "luxon": "^1.8.3",
+    "mathjs": "^5.4.0",
+    "reflect-metadata": "^0.1.12",
+    "xml2js": "^0.4.19"
+  }
+}

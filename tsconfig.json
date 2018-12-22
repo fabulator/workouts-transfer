@@ -1,0 +1,27 @@
+{
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "*": [
+        "*",
+        "src/*",
+        "tests/*"
+      ]
+    },
+    "outDir": "./dist",
+    "lib": ["dom", "esnext"],
+    "module": "commonjs",
+    "target": "esnext",
+    "moduleResolution": "node",
+    "experimentalDecorators": true,
+    "esModuleInterop": true,
+    "resolveJsonModule": true,
+    "emitDecoratorMetadata": true,
+    "strict": true,
+    "types": ["reflect-metadata", "jest"],
+    "declaration": true
+  },
+  "include": [
+    "src/**/*"
+  ]
+}
