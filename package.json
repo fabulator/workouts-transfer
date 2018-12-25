@@ -44,15 +44,16 @@
     "@socifi/commitlint-config": "^1.0.0"
   },
   "dependencies": {
-    "endomondo-api-handler": "^2.1.0-beta.1",
+    "endomondo-api-handler": "^2.1.0-beta.2",
     "fitbit-api-handler": "^2.1.0-beta.1",
-    "fitness-libraries": "^0.2.0",
+    "fitness-libraries": "^0.3.0",
     "fitness-models": "^0.2.0",
     "garmin-api-handler": "^0.1.2",
     "inversify": "^5.0.1",
     "luxon": "^1.8.3",
     "mathjs": "^5.4.0",
     "reflect-metadata": "^0.1.12",
+    "strava-api-handler": "^0.1.2",
     "xml2js": "^0.4.19"
   }
 }
