@@ -15,7 +15,7 @@ export default class WorkoutTransfer {
     public async copyWorkout(id: string): Promise<string | null> {
         const workoutToCopy = await this.from.getWorkout(id);
 
-        if (await this.to.findWorkout(workoutToCopy)) {
+        if (await this.to.findUniversalWorkout(workoutToCopy)) {
             return null;
         }
 

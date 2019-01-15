@@ -16,7 +16,7 @@ export default class StravaTransferAdapter implements TransferAdapter {
         return this.stravaConvertor.toUniversal(activity);
     }
 
-    public async findWorkout(workout: Workout): Promise<Workout | null> {
+    public async findWorkout(workout: Workout) {
         const activities = await this.stravaService.getActivities({
             before: workout.getStart().minus({ minutes: 3 }),
             after: workout.getStart().plus({ minutes: 3 }),
@@ -27,6 +27,16 @@ export default class StravaTransferAdapter implements TransferAdapter {
         }
 
         return activities[0];
+    }
+
+    public async findUniversalWorkout(workout: Workout) {
+        const foundWorkout = await this.findWorkout(workout);
+
+        if (!foundWorkout) {
+            return null;
+        }
+
+        return this.stravaConvertor.toUniversal(foundWorkout);
     }
 
     public async createWorkout(workout: Workout): Promise<string> {

@@ -16,7 +16,7 @@ export default class GarminTransferAdapter implements TransferAdapter {
         return this.garminConvertor.toUniversal(activity);
     }
 
-    public async findWorkout(workout: Workout): Promise<Workout | null> {
+    public async findWorkout(workout: Workout) {
         const activities = await this.garminService.getActivities({
             startDate: workout.getStart(),
             endDate: workout.getStart(),
@@ -29,10 +29,20 @@ export default class GarminTransferAdapter implements TransferAdapter {
         });
 
         if (activity) {
-            return this.garminConvertor.toUniversal(activity);
+            return activity;
         }
 
         return null;
+    }
+
+    public async findUniversalWorkout(workout: Workout) {
+        const foundWorkout = await this.findWorkout(workout);
+
+        if (!foundWorkout) {
+            return null;
+        }
+
+        return this.garminConvertor.toUniversal(foundWorkout);
     }
 
     public async createWorkout(workout: Workout): Promise<string> {

@@ -16,7 +16,7 @@ export default class FitbitTransferAdapter implements TransferAdapter {
         return this.fitbitConvertor.toUniversal(activity);
     }
 
-    public async findWorkout(workout: Workout): Promise<Workout | null> {
+    public async findWorkout(workout: Workout) {
         const activities = await this.fitbitService.getActivities({
             afterDate: workout.getStart().minus({ minutes: 1 }),
             limit: 1,
@@ -32,7 +32,17 @@ export default class FitbitTransferAdapter implements TransferAdapter {
             return null;
         }
 
-        return this.fitbitConvertor.toUniversal(activity);
+        return activity;
+    }
+
+    public async findUniversalWorkout(workout: Workout) {
+        const foundWorkout = await this.findWorkout(workout);
+
+        if (!foundWorkout) {
+            return null;
+        }
+
+        return this.fitbitConvertor.toUniversal(foundWorkout);
     }
 
     public async createWorkout(workout: Workout): Promise<string> {

@@ -26,7 +26,17 @@ export default class EndomondoTransferAdapter implements TransferAdapter {
             return null;
         }
 
-        return this.endomondoConvertor.toUniversal(workouts[0]);
+        return workouts[0];
+    }
+
+    public async findUniversalWorkout(workout: Workout) {
+        const foundWorkout = await this.findWorkout(workout);
+
+        if (!foundWorkout) {
+            return null;
+        }
+
+        return this.endomondoConvertor.toUniversal(foundWorkout);
     }
 
     public async createWorkout(workout: Workout) {

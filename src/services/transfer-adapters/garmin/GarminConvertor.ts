@@ -27,6 +27,11 @@ export default class GarminConvertor implements WorkoutConvertor<Activity> {
 
     protected async getUniversalPoints(activityId: number): Promise<Array<Point>> {
         const gpxData = await this.garminService.getActivityGpx(activityId);
+
+        if (!gpxData) {
+            return [];
+        }
+
         const points = await gpxParser(gpxData);
 
         if (!points) {

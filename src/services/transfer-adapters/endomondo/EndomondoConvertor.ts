@@ -17,7 +17,10 @@ export default class EndomondoConvertor implements WorkoutConvertor<EndomondoWor
     }
 
     public async toUniversal(workout: EndomondoWorkout): Promise<Workout> {
-        return new Workout(workout.toObject());
+        return new Workout({
+            ...workout.toObject(),
+            notes: workout.getMessage(),
+        });
     }
 
     public async fromUniversal(workout: Workout): Promise<EndomondoWorkout> {
@@ -39,6 +42,7 @@ export default class EndomondoConvertor implements WorkoutConvertor<EndomondoWor
                 ...(workout.isCommute ? ['work'] : []),
                 ...workout.getHashtags(),
             ],
+            message: workout.getNotes(),
         });
     }
 }

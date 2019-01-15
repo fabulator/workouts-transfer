@@ -27,12 +27,14 @@ type Point = {
 export default async function gpx(data: string): Promise<Array<Point> | null> {
     const parsedData: any = await parse(data);
     return parsedData.gpx.trk[0].trkseg[0].trkpt.map((point: any) => {
+        const cadence = point.extensions[0]['ns3:TrackPointExtension'][0]['ns3:cad'];
+
         return {
             time: DateTime.fromISO(point.time[0]),
             latitude: Number(point.$.lat),
             longitude: Number(point.$.lon),
             altitude: Number(point.ele[0]),
-            cadence: Number(point.extensions[0]['ns3:TrackPointExtension'][0]['ns3:cad'][0]),
+            cadence: cadence ? Number(cadence[0]) : undefined,
         };
     });
 }
