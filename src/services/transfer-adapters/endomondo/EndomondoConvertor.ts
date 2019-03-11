@@ -1,15 +1,44 @@
-import { injectable } from 'inversify';
+import { inject, injectable } from 'inversify';
+import { DateTime } from 'luxon';
+import { ENDOMONDO } from 'fitness-libraries';
+import { unit } from 'mathjs';
 import {
     Point as EndomondoPoint,
     Workout as EndomondoWorkout,
 } from 'endomondo-api-handler';
 import { Workout, Point } from 'fitness-models';
 import { WorkoutConvertor } from '../WorkoutConvertor';
+import gpx from '../../../parsers/gpx';
 
 @injectable()
 export default class EndomondoConvertor implements WorkoutConvertor<EndomondoWorkout> {
-    protected pointToUniversal(point: EndomondoPoint): Point {
-        return new Point(point.toObject());
+    public constructor(
+        @inject(ENDOMONDO.EndomondoService) private endomondoService: ENDOMONDO.EndomondoService,
+    ) {}
+
+    protected pointToUniversal({
+        time,
+        latitude,
+        longitude,
+        altitude,
+        cadence,
+        hr,
+    }: {
+        time: DateTime,
+        latitude?: number,
+        longitude?: number,
+        altitude?: number,
+        cadence?: number,
+        hr?: number,
+    }): Point {
+        return new Point({
+            time,
+            latitude,
+            longitude,
+            cadence,
+            hr,
+            ...(altitude ? { altitude: unit(altitude, 'm') } : {}),
+        });
     }
 
     protected pointFromUniversal(point: Point): EndomondoPoint {
@@ -17,8 +46,11 @@ export default class EndomondoConvertor implements WorkoutConvertor<EndomondoWor
     }
 
     public async toUniversal(workout: EndomondoWorkout): Promise<Workout> {
+        const gpxPoints = await gpx(await this.endomondoService.api.getWorkoutGpx(workout.getId()));
+
         return new Workout({
             ...workout.toObject(),
+            points: gpxPoints ? gpxPoints.map(point => this.pointToUniversal(point)) : [],
             notes: workout.getMessage(),
         });
     }
