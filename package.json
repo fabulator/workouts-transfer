@@ -32,7 +32,7 @@
   },
   "devDependencies": {
     "@socifi/eslint-config": "^2.5.0",
-    "@socifi/jest-config": "^2.2.0",
+    "@socifi/jest-config": "^2.3.0",
     "@socifi/rollup-config": "^2.0.1",
     "@types/jest": "^23.3.10",
     "@types/luxon": "^1.4.1",
