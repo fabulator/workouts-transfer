@@ -1,6 +1,13 @@
 # Change Log
 All notable changes to this project will be documented in this file.
 
+## [0.5.0] 2019-03-11
+### Fixed
+- Node 11 by updating jest config
+
+### Added
+- Parsing Endomondo from the GPX
+
 ## [0.4.0] 2019-01-15
 ### Changed
 - Updated libraries
