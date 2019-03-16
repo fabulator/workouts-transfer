@@ -1,6 +1,10 @@
 # Change Log
 All notable changes to this project will be documented in this file.
 
+## [0.6.0] 2019-03-16
+### Changed
+- Updates libraries
+
 ## [0.5.0] 2019-03-11
 ### Fixed
 - Node 11 by updating jest config
