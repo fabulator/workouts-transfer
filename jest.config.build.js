@@ -1,6 +1,6 @@
 module.exports = {
     ...require('@socifi/jest-config')('build'),
-    setupTestFrameworkScriptFile: null,
+    setupFilesAfterEnv: [],
     transform: {
         '^.+\\.tsx?$': 'ts-jest',
     },
