@@ -1,6 +1,14 @@
 # Change Log
 All notable changes to this project will be documented in this file.
 
+## [0.7.0] 2019-03-29
+### Fixed
+- Linter
+- Strava version
+
+### Added
+- Temperature parser
+
 ## [0.6.0] 2019-03-16
 ### Changed
 - Updates libraries
