@@ -47,6 +47,7 @@ export default class GarminConvertor implements WorkoutConvertor<Activity> {
                 longitude: point.longitude,
                 altitude: altitude != null ? unit(altitude, 'm') : undefined,
                 cadence: point.cadence,
+                temperature: point.temperature ? unit(point.temperature, 'celsius') : undefined,
             });
         });
     }

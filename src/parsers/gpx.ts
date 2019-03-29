@@ -22,6 +22,7 @@ type Point = {
     altitude?: number,
     cadence?: number,
     hr?: number,
+    temperature?: number,
 };
 
 const gpxExtension = 'gpxtpx:TrackPointExtension';
@@ -40,6 +41,20 @@ function getCadence(point: any): number | undefined {
 
     if (extensions[0][gpxExtension] && extensions[0]['gpxtpx:TrackPointExtension'][0]['gpxtpx:cad']) {
         return Number(point.extensions[0][gpxExtension][0]['gpxtpx:cad'][0]);
+    }
+
+    return undefined;
+}
+
+function getTemperature(point: any): number | undefined {
+    const { extensions } = point;
+
+    if (!extensions) {
+        return undefined;
+    }
+
+    if (extensions[0][trackExtension] && extensions[0][trackExtension][0]['ns3:atemp']) {
+        return Number(point.extensions[0][trackExtension][0]['ns3:atemp'][0]);
     }
 
     return undefined;
@@ -70,6 +85,7 @@ export default async function gpx(data: string): Promise<Array<Point> | null> {
             altitude: Number(point.ele[0]),
             cadence: getCadence(point),
             hr: getHr(point),
+            temperature: getTemperature(point),
         };
     });
 }
