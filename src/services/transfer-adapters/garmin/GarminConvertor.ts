@@ -12,7 +12,7 @@ export default class GarminConvertor implements WorkoutConvertor<Activity> {
         @inject(GARMIN.GarminService) private garminService: GARMIN.GarminService,
     ) {}
 
-    protected activityMap: Array<{ garminName: TYPES.ActivityType, id: WORKOUT_TYPES.WorkoutType }> = [
+    protected activityMap: { garminName: TYPES.ActivityType, id: WORKOUT_TYPES.WorkoutType }[] = [
         { garminName: Activity.TYPE.RUNNING, id: WORKOUT_TYPES.RUNNING },
         { garminName: Activity.TYPE.CYCLING, id: WORKOUT_TYPES.CYCLING_SPORT },
         { garminName: Activity.TYPE.UNCATEGORIZED, id: WORKOUT_TYPES.OTHER },
@@ -25,7 +25,7 @@ export default class GarminConvertor implements WorkoutConvertor<Activity> {
         { garminName: Activity.TYPE.SWIMMING, id: WORKOUT_TYPES.SWIMMING },
     ];
 
-    protected async getUniversalPoints(activityId: number): Promise<Array<Point>> {
+    protected async getUniversalPoints(activityId: number): Promise<Point[]> {
         const gpxData = await this.garminService.getActivityGpx(activityId);
 
         if (!gpxData) {

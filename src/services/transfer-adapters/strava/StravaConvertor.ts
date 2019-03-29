@@ -11,12 +11,12 @@ export default class StravaConvertor implements WorkoutConvertor<Activity> {
         @inject(STRAVA.StravaService) private stravaService: STRAVA.StravaService,
     ) {}
 
-    private activityMap: Array<{ stravaId: string, id: WORKOUT_TYPES.WorkoutType }> = [
+    private activityMap: { stravaId: string, id: WORKOUT_TYPES.WorkoutType }[] = [
         { stravaId: Activity.ACTIVITY_TYPES.RIDE, id: WORKOUT_TYPES.CYCLING_SPORT },
         { stravaId: Activity.ACTIVITY_TYPES.RUN, id: WORKOUT_TYPES.RUNNING },
     ];
 
-    private async getUniversalPoints(activity: Activity<number>): Promise<Array<Point>> {
+    private async getUniversalPoints(activity: Activity<number>): Promise<Point[]> {
         const points = await this.stravaService.getActivityPoint(activity);
         return points.map((point) => {
             return new Point({

@@ -12,7 +12,7 @@ export default class FitbitConvertor implements WorkoutConvertor<Activity> {
         @inject(FITBIT.FitbitService) private fitbitService: FITBIT.FitbitService,
     ) {}
 
-    private activityMap: Array<{ fitbitId: TYPES.ActivityType, id: WORKOUT_TYPES.WorkoutType }> = [
+    private activityMap: { fitbitId: TYPES.ActivityType, id: WORKOUT_TYPES.WorkoutType }[] = [
         { fitbitId: ACTIVITY_TYPES.BIKE, id: WORKOUT_TYPES.CYCLING_SPORT },
         { fitbitId: ACTIVITY_TYPES.RUNNING, id: WORKOUT_TYPES.RUNNING },
         { fitbitId: ACTIVITY_TYPES.FENCING, id: WORKOUT_TYPES.FENCING },
@@ -22,7 +22,7 @@ export default class FitbitConvertor implements WorkoutConvertor<Activity> {
         { fitbitId: ACTIVITY_TYPES.SWIMMING, id: WORKOUT_TYPES.SWIMMING },
     ];
 
-    private async getUniversalPoints(activityId: number): Promise<Array<Point>> {
+    private async getUniversalPoints(activityId: number): Promise<Point[]> {
         const tcxData = await this.fitbitService.getActivityTcx(activityId);
         const points = await tcx(tcxData);
 

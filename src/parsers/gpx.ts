@@ -6,6 +6,7 @@ const parser = new xml2js.Parser();
 
 function parse(data: any): any {
     return new Promise((resolve, reject) => {
+        // eslint-disable-next-line promise/prefer-await-to-callbacks
         parser.parseString(data, (err: any, result: any) => {
             if (err) {
                 reject(err);
@@ -15,7 +16,7 @@ function parse(data: any): any {
     });
 }
 
-type Point = {
+interface Point {
     time: DateTime,
     latitude?: number,
     longitude?: number,
@@ -23,7 +24,7 @@ type Point = {
     cadence?: number,
     hr?: number,
     temperature?: number,
-};
+}
 
 const gpxExtension = 'gpxtpx:TrackPointExtension';
 const trackExtension = 'ns3:TrackPointExtension';
@@ -75,7 +76,7 @@ function getHr(point: any): number | undefined {
 }
 
 // @ts-ignore
-export default async function gpx(data: string): Promise<Array<Point> | null> {
+export default async function gpx(data: string): Promise<Point[] | null> {
     const parsedData: any = await parse(data);
     return parsedData.gpx.trk[0].trkseg[0].trkpt.map((point: any) => {
         return {

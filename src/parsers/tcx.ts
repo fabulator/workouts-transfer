@@ -6,6 +6,7 @@ const parser = new xml2js.Parser();
 
 function parse(data: any): any {
     return new Promise((resolve, reject) => {
+        // eslint-disable-next-line promise/prefer-await-to-callbacks
         parser.parseString(data, (err: any, result: any) => {
             if (err) {
                 reject(err);
@@ -15,7 +16,7 @@ function parse(data: any): any {
     });
 }
 
-type Point = {
+interface Point {
     time: DateTime,
     latitude?: number,
     longitude?: number,
@@ -23,9 +24,9 @@ type Point = {
     distance?: number,
     hr?: number,
     cadence?: number,
-};
+}
 
-async function tcx(data: any): Promise<Array<Point> | null> {
+async function tcx(data: any): Promise<Point[] | null> {
     const parsedData: any = await parse(data);
     if (!parsedData.TrainingCenterDatabase.Activities[0].Activity[0].Lap) {
         return null;
