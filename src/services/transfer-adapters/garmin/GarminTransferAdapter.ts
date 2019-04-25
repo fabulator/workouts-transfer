@@ -1,6 +1,7 @@
 import { inject, injectable } from 'inversify';
 import { Workout } from 'fitness-models';
 import { GARMIN } from 'fitness-libraries';
+import { Activity } from 'garmin-api-handler';
 import { TransferAdapter } from '../TransferAdapter';
 import GarminConvertor from './GarminConvertor';
 
@@ -23,7 +24,7 @@ export default class GarminTransferAdapter implements TransferAdapter {
             limit: 10,
         });
 
-        const activity = activities.find((activity) => {
+        const activity = activities.find((activity: Activity) => {
             return workout.getStart().minus({ minutes: 3 }) < activity.getStart()
                 && workout.getStart().plus({ minutes: 3 }) > activity.getStart();
         });

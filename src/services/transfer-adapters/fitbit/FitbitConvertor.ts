@@ -52,6 +52,7 @@ export default class FitbitConvertor implements WorkoutConvertor<Activity> {
             throw new Error(`Cannot find type id ${activity.getTypeId()}`);
         }
 
+        // @ts-ignore
         const workout = new Workout({
             ...activity.toObject(),
             typeId: type.id,
@@ -88,6 +89,7 @@ export default class FitbitConvertor implements WorkoutConvertor<Activity> {
             throw new Error(`Cannot find type id ${workout.getTypeId()}`);
         }
 
+        // @ts-ignore
         return new Activity({
             ...workout.toObject(),
             typeId: type.fitbitId,
