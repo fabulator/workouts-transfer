@@ -46,9 +46,9 @@
   "dependencies": {
     "endomondo-api-handler": "^3.1.0",
     "fitbit-api-handler": "^3.1.0",
-    "fitness-libraries": "^0.7.0",
-    "fitness-models": "^0.3.1",
-    "garmin-api-handler": "^0.2.0",
+    "fitness-libraries": "^0.8.0",
+    "fitness-models": "^0.4.0",
+    "garmin-api-handler": "^0.2.1",
     "inversify": "^5.0.1",
     "luxon": "^1.12.0",
     "mathjs": "^5.8.0",
