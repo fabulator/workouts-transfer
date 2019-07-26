@@ -14,6 +14,7 @@ export default class StravaConvertor implements WorkoutConvertor<Activity> {
     private activityMap: { stravaId: string, id: WORKOUT_TYPES.WorkoutType }[] = [
         { stravaId: Activity.ACTIVITY_TYPES.RIDE, id: WORKOUT_TYPES.CYCLING_SPORT },
         { stravaId: Activity.ACTIVITY_TYPES.RUN, id: WORKOUT_TYPES.RUNNING },
+        { stravaId: Activity.ACTIVITY_TYPES.SWIM, id: WORKOUT_TYPES.SWIMMING },
     ];
 
     private async getUniversalPoints(activity: Activity<number>): Promise<Point[]> {
@@ -64,9 +65,12 @@ export default class StravaConvertor implements WorkoutConvertor<Activity> {
             throw new Error(`Cannot find type id ${workout.getTypeId()}`);
         }
 
+        const title = workout.getTitle();
+
         // @ts-ignore
         return new Activity({
             ...workout.toObject(),
+            title: title || type.stravaId,
             typeId: type.stravaId,
             id: undefined,
             source: undefined,
