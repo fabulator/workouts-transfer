@@ -78,6 +78,11 @@ function getHr(point: any): number | undefined {
 // @ts-ignore
 export default async function gpx(data: string): Promise<Point[] | null> {
     const parsedData: any = await parse(data);
+
+    if (!parsedData.gpx.trk[0].trkseg[0].trkpt) {
+        return null;
+    }
+
     return parsedData.gpx.trk[0].trkseg[0].trkpt.map((point: any) => {
         return {
             time: DateTime.fromISO(point.time[0]),
