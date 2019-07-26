@@ -1,6 +1,13 @@
 # Change Log
 All notable changes to this project will be documented in this file.
 
+## [0.8.2] 2019-07-26
+### Other
+- Merge remote-tracking branch 'origin/master'
+
+### Fixed
+- Parsing gpx files with no elevation
+
 ## [0.8.1] 2019-07-26
 ### Fixed
 - Parsing gpx files without points
