@@ -1,6 +1,10 @@
 # Change Log
 All notable changes to this project will be documented in this file.
 
+## [0.8.1] 2019-07-26
+### Fixed
+- Parsing gpx files without points
+
 ## [0.8.0] 2019-04-25
 ### Fixed
 - Typescript definitions
