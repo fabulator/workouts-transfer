@@ -46,7 +46,7 @@ export default class FitbitConvertor implements WorkoutConvertor<Activity> {
     }
 
     public async toUniversal(activity: Activity): Promise<Workout> {
-        const type = this.activityMap.find(item => item.fitbitId === activity.getTypeId());
+        const type = this.activityMap.find((item) => item.fitbitId === activity.getTypeId());
 
         if (!type) {
             throw new Error(`Cannot find type id ${activity.getTypeId()}`);
@@ -83,7 +83,7 @@ export default class FitbitConvertor implements WorkoutConvertor<Activity> {
     }
 
     public async fromUniversal(workout: Workout): Promise<Activity> {
-        const type = this.activityMap.find(item => item.id === workout.getTypeId());
+        const type = this.activityMap.find((item) => item.id === workout.getTypeId());
 
         if (!type) {
             throw new Error(`Cannot find type id ${workout.getTypeId()}`);

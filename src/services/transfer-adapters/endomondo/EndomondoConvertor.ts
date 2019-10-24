@@ -50,7 +50,7 @@ export default class EndomondoConvertor implements WorkoutConvertor<EndomondoWor
 
         return new Workout({
             ...workout.toObject(),
-            points: gpxPoints ? gpxPoints.map(point => this.pointToUniversal(point)) : [],
+            points: gpxPoints ? gpxPoints.map((point) => this.pointToUniversal(point)) : [],
             notes: workout.getMessage(),
         });
     }
