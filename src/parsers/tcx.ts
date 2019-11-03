@@ -26,6 +26,7 @@ interface Point {
     cadence?: number,
 }
 
+// eslint-disable-next-line sonarjs/cognitive-complexity
 async function tcx(data: any): Promise<Point[] | null> {
     const parsedData: any = await parse(data);
     if (!parsedData.TrainingCenterDatabase.Activities[0].Activity[0].Lap) {
@@ -33,6 +34,7 @@ async function tcx(data: any): Promise<Point[] | null> {
     }
 
     return parsedData.TrainingCenterDatabase.Activities[0].Activity[0].Lap.flatMap((lap: any) => {
+        // eslint-disable-next-line complexity
         return lap.Track[0].Trackpoint.map((point: any) => {
             return {
                 time: DateTime.fromISO(point.Time[0]),
