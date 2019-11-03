@@ -42,16 +42,11 @@
     "dependencies": {
         "@types/luxon": "^1.15.2",
         "@types/mathjs": "^6.0.2",
-        "endomondo-api-handler": "^3.9.0",
-        "fitbit-api-handler": "^3.6.0",
         "fitness-libraries": "^0.15.0",
-        "fitness-models": "^0.8.0",
-        "garmin-api-handler": "^0.10.0",
         "inversify": "^5.0.1",
         "luxon": "^1.21.0",
         "mathjs": "^6.2.3",
         "reflect-metadata": "^0.1.13",
-        "strava-api-handler": "^0.10.0",
         "xml2js": "^0.4.22"
     }
 }

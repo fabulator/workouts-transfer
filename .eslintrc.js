@@ -3,6 +3,7 @@ module.exports = {
         '@socifi',
     ],
     rules: {
+        'import/no-extraneous-dependencies': 0,
         'camelcase': 0,
         'typescript/no-parameter-properties': 0,
         'no-useless-constructor': 0,
