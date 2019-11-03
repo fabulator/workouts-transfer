@@ -1,6 +1,14 @@
 # Change Log
 All notable changes to this project will be documented in this file.
 
+## [0.9.0] 2019-11-03
+### Changed
+- [dc9c3cc](https://github.com/fabulator/workouts-transfer/commit/dc9c3cc54b3adbdd815ed275fa39623bf2ec3f6a) Update dependencies
+- [ff78c4a](https://github.com/fabulator/workouts-transfer/commit/ff78c4a2a97b1775331e62c7f292af461f5b3ae1) Update dependencies.
+
+### Fixed
+- [dc9c3cc](https://github.com/fabulator/workouts-transfer/commit/dc9c3cc54b3adbdd815ed275fa39623bf2ec3f6a) Parsing laps in txc files.
+
 ## [0.8.2] 2019-07-26
 ### Other
 - Merge remote-tracking branch 'origin/master'
