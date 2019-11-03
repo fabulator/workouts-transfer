@@ -32,16 +32,18 @@ async function tcx(data: any): Promise<Point[] | null> {
         return null;
     }
 
-    return parsedData.TrainingCenterDatabase.Activities[0].Activity[0].Lap[0].Track[0].Trackpoint.map((point: any) => {
-        return {
-            time: DateTime.fromISO(point.Time[0]),
-            latitude: point.Position ? Number(point.Position[0].LatitudeDegrees[0]) : undefined,
-            longitude: point.Position ? Number(point.Position[0].LongitudeDegrees[0]) : undefined,
-            altitude: point.AltitudeMeters ? Number(point.AltitudeMeters[0]) : undefined,
-            distance: point.DistanceMeters ? Number(point.DistanceMeters[0]) : undefined,
-            hr: point.HeartRateBpm ? Number(point.HeartRateBpm[0].Value[0]) : undefined,
-            cadence: point.Cadence ? Number(point.Cadence[0]) : undefined,
-        };
+    return parsedData.TrainingCenterDatabase.Activities[0].Activity[0].Lap.flatMap((lap: any) => {
+        return lap.Track[0].Trackpoint.map((point: any) => {
+            return {
+                time: DateTime.fromISO(point.Time[0]),
+                latitude: point.Position ? Number(point.Position[0].LatitudeDegrees[0]) : undefined,
+                longitude: point.Position ? Number(point.Position[0].LongitudeDegrees[0]) : undefined,
+                altitude: point.AltitudeMeters ? Number(point.AltitudeMeters[0]) : undefined,
+                distance: point.DistanceMeters ? Number(point.DistanceMeters[0]) : undefined,
+                hr: point.HeartRateBpm ? Number(point.HeartRateBpm[0].Value[0]) : undefined,
+                cadence: point.Cadence ? Number(point.Cadence[0]) : undefined,
+            };
+        });
     });
 }
 

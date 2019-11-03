@@ -83,6 +83,7 @@ export default class GarminConvertor implements WorkoutConvertor<Activity> {
             return undefined;
         })();
 
+        // @ts-ignore
         return new Activity({
             ...workout.toObject(),
             id: undefined,
