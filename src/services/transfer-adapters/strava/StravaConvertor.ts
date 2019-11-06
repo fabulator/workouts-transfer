@@ -15,6 +15,9 @@ export default class StravaConvertor implements WorkoutConvertor<Activity> {
         { stravaId: Activity.ACTIVITY_TYPES.RIDE, id: WORKOUT_TYPES.CYCLING_SPORT },
         { stravaId: Activity.ACTIVITY_TYPES.RUN, id: WORKOUT_TYPES.RUNNING },
         { stravaId: Activity.ACTIVITY_TYPES.SWIM, id: WORKOUT_TYPES.SWIMMING },
+        { stravaId: Activity.ACTIVITY_TYPES.WEIGHT_TRAINING, id: WORKOUT_TYPES.WEIGHT_TRAINING },
+        { stravaId: Activity.ACTIVITY_TYPES.WALK, id: WORKOUT_TYPES.WALKING },
+        { stravaId: Activity.ACTIVITY_TYPES.WORKUT, id: WORKOUT_TYPES.CIRKUIT_TRAINING },
     ];
 
     private async getUniversalPoints(activity: Activity<number>): Promise<Point[]> {

@@ -16,7 +16,7 @@ export default class GarminConvertor implements WorkoutConvertor<Activity> {
         { garminName: Activity.TYPE.RUNNING, id: WORKOUT_TYPES.RUNNING },
         { garminName: Activity.TYPE.CYCLING, id: WORKOUT_TYPES.CYCLING_SPORT },
         { garminName: Activity.TYPE.UNCATEGORIZED, id: WORKOUT_TYPES.OTHER },
-        { garminName: Activity.TYPE.STRENGTH_TRAINING, id: WORKOUT_TYPES.CIRKUIT_TRAINING },
+        { garminName: Activity.TYPE.FITNESS_EQUIPMENT, id: WORKOUT_TYPES.CIRKUIT_TRAINING },
         { garminName: Activity.TYPE.STRENGTH_TRAINING, id: WORKOUT_TYPES.WEIGHT_TRAINING },
         { garminName: Activity.TYPE.WALKING, id: WORKOUT_TYPES.WALKING },
         { garminName: Activity.TYPE.SKATING, id: WORKOUT_TYPES.SKATEBOARDING },

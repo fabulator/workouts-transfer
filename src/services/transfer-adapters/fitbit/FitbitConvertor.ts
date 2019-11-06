@@ -20,6 +20,8 @@ export default class FitbitConvertor implements WorkoutConvertor<Activity> {
         { fitbitId: ACTIVITY_TYPES.SKATEBOARDING, id: WORKOUT_TYPES.SKATEBOARDING },
         { fitbitId: ACTIVITY_TYPES.YOGA, id: WORKOUT_TYPES.YOGA },
         { fitbitId: ACTIVITY_TYPES.SWIMMING, id: WORKOUT_TYPES.SWIMMING },
+        { fitbitId: ACTIVITY_TYPES.WEIGHT_TRAINING, id: WORKOUT_TYPES.WEIGHT_TRAINING },
+        { fitbitId: ACTIVITY_TYPES.CIRKUIT_TRAINING, id: WORKOUT_TYPES.CIRKUIT_TRAINING },
     ];
 
     private async getUniversalPoints(activityId: number): Promise<Point[]> {

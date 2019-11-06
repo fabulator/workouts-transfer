@@ -42,9 +42,9 @@
     "dependencies": {
         "@types/luxon": "^1.15.2",
         "@types/mathjs": "^6.0.2",
-        "fitness-libraries": "^0.15.0",
+        "fitness-libraries": "^0.16.0",
         "inversify": "^5.0.1",
-        "luxon": "^1.21.0",
+        "luxon": "^1.21.1",
         "mathjs": "^6.2.3",
         "reflect-metadata": "^0.1.13",
         "xml2js": "^0.4.22"
