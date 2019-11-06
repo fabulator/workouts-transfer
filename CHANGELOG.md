@@ -1,6 +1,13 @@
 # Change Log
 All notable changes to this project will be documented in this file.
 
+## [0.10.0] 2019-11-06
+### Changed
+- [5ebac5c](https://github.com/fabulator/workouts-transfer/commit/5ebac5c2d48e1405186aef403a9ba4357caa5c96) Convert another type activities.
+
+### Fixed
+- [edc0995](https://github.com/fabulator/workouts-transfer/commit/edc09955a3dd9f462bdeb0ef6f21b5abd8f8effe) Remove dependencies that are already in fitness-libraries to avoid multiple versions
+
 ## [0.9.0] 2019-11-03
 ### Changed
 - [dc9c3cc](https://github.com/fabulator/workouts-transfer/commit/dc9c3cc54b3adbdd815ed275fa39623bf2ec3f6a) Update dependencies
