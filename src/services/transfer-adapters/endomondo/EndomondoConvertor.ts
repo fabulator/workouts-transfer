@@ -50,6 +50,7 @@ export default class EndomondoConvertor implements WorkoutConvertor<EndomondoWor
 
         return new Workout({
             ...workout.toObject(),
+            privacy: workout.getWorkoutPrivacy(),
             points: gpxPoints ? gpxPoints.map((point) => this.pointToUniversal(point)) : [],
             notes: workout.getMessage(),
         });
@@ -67,6 +68,7 @@ export default class EndomondoConvertor implements WorkoutConvertor<EndomondoWor
             points: workout.getPoints().map((point: Point) => this.pointFromUniversal(point)),
             id: undefined,
             source: undefined,
+            workoutPrivacy: workout.getPrivacy(),
             // @ts-ignore
             typeId,
             hashtags: [
