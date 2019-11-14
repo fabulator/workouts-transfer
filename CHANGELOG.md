@@ -1,6 +1,10 @@
 # Change Log
 All notable changes to this project will be documented in this file.
 
+## [0.13.0] 2019-11-14
+### Changed
+- [37097a1](https://github.com/fabulator/workouts-transfer/commit/37097a1d9f123f615cd12e02d712bb0017474883) Update dependency fitness-libraries to ^0.28.0
+
 ## [0.12.1] 2019-11-12
 ### Fixed
 - [36d3b69](https://github.com/fabulator/workouts-transfer/commit/36d3b690f8d96d4f3fcb57346ae5022129eaa57e) Converting endomondo workouts.
