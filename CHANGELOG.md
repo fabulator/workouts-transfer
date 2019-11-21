@@ -1,6 +1,10 @@
 # Change Log
 All notable changes to this project will be documented in this file.
 
+## [0.18.0] 2019-11-21
+### Changed
+- [e37ce50](https://github.com/fabulator/workouts-transfer/commit/e37ce5045946576ff5617e1c271b9be49639d68a) Update dependency fitness-libraries to ^0.38.0
+
 ## [0.17.0] 2019-11-19
 ### Changed
 - [6b81c75](https://github.com/fabulator/workouts-transfer/commit/6b81c7528c591551a4299d3749c55002d68d3380) Update dependency luxon to v1.21.2
