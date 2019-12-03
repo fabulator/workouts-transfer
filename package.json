@@ -36,16 +36,16 @@
         "@socifi/jest-config": "^2.4.1",
         "@socifi/rollup-config": "^2.2.2",
         "cross-fetch": "^3.0.4",
-        "ts-jest": "^24.1.0",
+        "ts-jest": "^24.2.0",
         "semantic-release-config-fabulator": "^1.3.2"
     },
     "dependencies": {
-        "@types/luxon": "^1.15.2",
+        "@types/luxon": "^1.21.0",
         "@types/mathjs": "^6.0.2",
-        "fitness-libraries": "^0.58.0",
+        "fitness-libraries": "^0.59.0",
         "inversify": "^5.0.1",
-        "luxon": "^1.21.1",
-        "mathjs": "^6.2.3",
+        "luxon": "^1.21.3",
+        "mathjs": "^6.2.5",
         "reflect-metadata": "^0.1.13",
         "xml2js": "^0.4.22"
     }
