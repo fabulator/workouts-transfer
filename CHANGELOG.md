@@ -1,6 +1,10 @@
 # Change Log
 All notable changes to this project will be documented in this file.
 
+## [0.26.2] 2019-12-03
+### Fixed
+- [3954853](https://github.com/fabulator/workouts-transfer/commit/3954853a487bc85887b217a11cf3927c72549d90) Parsing garmin hr data.
+
 ## [0.26.1] 2019-12-03
 ### Fixed
 - [47879b5](https://github.com/fabulator/workouts-transfer/commit/47879b5568178f3f74300b41e84b2fe2b955a573) Parsing hr from garmin.
