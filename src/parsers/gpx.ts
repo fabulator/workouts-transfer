@@ -72,6 +72,10 @@ function getHr(point: any): number | undefined {
         return Number(point.extensions[0][gpxExtension][0]['gpxtpx:hr'][0]);
     }
 
+    if (extensions[0][trackExtension] && extensions[0][trackExtension][0]['ns3:hr']) {
+        return Number(point.extensions[0][trackExtension][0]['ns3:hr'][0]);
+    }
+
     return undefined;
 }
 
