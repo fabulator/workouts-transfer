@@ -1,6 +1,10 @@
 # Change Log
 All notable changes to this project will be documented in this file.
 
+## [0.26.0] 2019-12-03
+### Changed
+- [4cc9e64](https://github.com/fabulator/workouts-transfer/commit/4cc9e64f135868007ca7c3f0337f0b42e37a6e63) Update libraries.
+
 ## [0.25.1] 2019-12-03
 ### Fixed
 - [7197e3a](https://github.com/fabulator/workouts-transfer/commit/7197e3a4ba3675b4e35aa968e9869328d78a1e1d) Converting of mountain bike rides
