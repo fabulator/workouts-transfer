@@ -23,6 +23,7 @@ export default class GarminConvertor implements WorkoutConvertor<Activity> {
         { garminName: Activity.TYPE.OTHER, id: WORKOUT_TYPES.FENCING },
         { garminName: Activity.TYPE.YOGA, id: WORKOUT_TYPES.YOGA },
         { garminName: Activity.TYPE.SWIMMING, id: WORKOUT_TYPES.SWIMMING },
+        { garminName: Activity.TYPE.MOUNTAIN_BIKING, id: WORKOUT_TYPES.CYCLING_SPORT },
     ];
 
     protected async getUniversalPoints(activityId: number): Promise<Point[]> {
