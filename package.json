@@ -1,6 +1,6 @@
 {
     "name": "workouts-transfer",
-    "version": "0.26.2",
+    "version": "0.27.0",
     "description": "Workouts transfer between services as inversify modules.",
     "main": "dist/index.js",
     "types": "dist/index.d.ts",
