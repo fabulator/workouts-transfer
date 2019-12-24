@@ -1,6 +1,10 @@
 # Change Log
 All notable changes to this project will be documented in this file.
 
+## [0.30.0] 2019-12-24
+### Changed
+- [920b6fd](https://github.com/fabulator/workouts-transfer/commit/920b6fdb9c4bde0e9aba6a32ec2e1fab12f7d5ad) Update dependency fitness-libraries to ^0.71.0
+
 ## [0.29.0] 2019-12-20
 ### Changed
 - [7cf69db](https://github.com/fabulator/workouts-transfer/commit/7cf69db63b7f2f44cf0f778728c15bb4540c854f) Update dependency xml2js to v0.4.23
