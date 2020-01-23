@@ -42,7 +42,7 @@
     "dependencies": {
         "@types/luxon": "^1.21.0",
         "@types/mathjs": "^6.0.2",
-        "fitness-libraries": "^0.96.0",
+        "fitness-libraries": "^0.97.0",
         "inversify": "^5.0.1",
         "luxon": "^1.21.3",
         "mathjs": "^6.2.5",
