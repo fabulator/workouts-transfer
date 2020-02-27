@@ -1,6 +1,12 @@
 # Change Log
 All notable changes to this project will be documented in this file.
 
+## [0.49.0] 2020-02-27
+### Changed
+- [f0021a9](https://github.com/fabulator/workouts-transfer/commit/f0021a92de9fbb22827cdb405c9f4f797d13db3e) Update dependency mathjs to v6.6.1
+- [64d0195](https://github.com/fabulator/workouts-transfer/commit/64d019561176dc6c2f97174cd3049c8baa17711a) Update dev dependency @socifi/eslint-config to v2.10.2 
+- [279bd81](https://github.com/fabulator/workouts-transfer/commit/279bd8170aac809df17f830890edbb2d99f845a6) Update dev dependency ts-jest to v25.2.1 
+
 ## [0.48.0] 2020-02-16
 ### Changed
 - [e674dfb](https://github.com/fabulator/workouts-transfer/commit/e674dfb22e4b3333a6b09fcd0cf306360e6b707f) Update dependency fitness-libraries to ^0.119.0
