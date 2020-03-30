@@ -1,6 +1,10 @@
 # Change Log
 All notable changes to this project will be documented in this file.
 
+## [0.60.0] 2020-03-30
+### Changed
+- [666d9e0](https://github.com/fabulator/workouts-transfer/commit/666d9e08b3ea65ecf3cc06114cff1b08b47ec9b2) Update dependency fitness-libraries to ^0.140.0
+
 ## [0.59.0] 2020-03-27
 ### Changed
 - [ff9d3c3](https://github.com/fabulator/workouts-transfer/commit/ff9d3c3d98ba69aeabb63528e8eb74358f02195c) Update dependency fitness-libraries to ^0.137.0
