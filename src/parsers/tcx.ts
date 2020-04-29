@@ -33,7 +33,7 @@ async function tcx(data: any): Promise<Point[] | null> {
         return null;
     }
 
-    return parsedData.TrainingCenterDatabase.Activities[0].Activity[0].Lap.flatMap((lap: any) => {
+    return parsedData.TrainingCenterDatabase.Activities[0].Activity[0].Lap.flatMap((lap: any, key: string) => {
         // eslint-disable-next-line complexity
         return lap.Track[0].Trackpoint.map((point: any) => {
             return {
@@ -44,6 +44,7 @@ async function tcx(data: any): Promise<Point[] | null> {
                 distance: point.DistanceMeters ? Number(point.DistanceMeters[0]) : undefined,
                 hr: point.HeartRateBpm ? Number(point.HeartRateBpm[0].Value[0]) : undefined,
                 cadence: point.Cadence ? Number(point.Cadence[0]) : undefined,
+                lap: key,
             };
         });
     });

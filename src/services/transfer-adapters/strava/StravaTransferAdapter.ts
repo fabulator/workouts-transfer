@@ -18,8 +18,8 @@ export default class StravaTransferAdapter implements TransferAdapter {
 
     public async findWorkout(workout: Workout) {
         const activities = await this.stravaService.getActivities({
-            before: workout.getStart().minus({ minutes: 3 }),
-            after: workout.getStart().plus({ minutes: 3 }),
+            before: workout.getStart().plus({ minutes: 3 }),
+            after: workout.getStart().minus({ minutes: 3 }),
         });
 
         if (activities.length === 0) {

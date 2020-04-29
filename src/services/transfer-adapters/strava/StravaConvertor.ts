@@ -21,6 +21,10 @@ export default class StravaConvertor implements WorkoutConvertor<Activity> {
     ];
 
     private async getUniversalPoints(activity: Activity<number>): Promise<Point[]> {
+        if (!activity.getSource().upload_id) {
+            return [];
+        }
+
         const points = await this.stravaService.getActivityPoint(activity);
         return points.map((point) => {
             return new Point({

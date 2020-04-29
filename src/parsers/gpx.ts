@@ -92,7 +92,7 @@ export default async function gpx(data: string): Promise<Point[] | null> {
             time: DateTime.fromISO(point.time[0]),
             latitude: Number(point.$.lat),
             longitude: Number(point.$.lon),
-            altitude: point.ele[0] ? Number(point.ele[0]) : undefined,
+            altitude: point.ele && point.ele[0] ? Number(point.ele[0]) : undefined,
             cadence: getCadence(point),
             hr: getHr(point),
             temperature: getTemperature(point),
