@@ -1,6 +1,10 @@
 # Change Log
 All notable changes to this project will be documented in this file.
 
+## [0.74.0] 2020-05-01
+### Changed
+- [efac5f1](https://github.com/fabulator/workouts-transfer/commit/efac5f13ba4a699aafb7e04f5534d593d4b5d172) Update dependency fitness-libraries to ^0.163.0
+
 ## [0.73.1] 2020-04-29
 ### Fixed
 - [f56469b](https://github.com/fabulator/workouts-transfer/commit/f56469be51d05429aabad084785f6f82948d5ba4) Converting to garmin and strava.
