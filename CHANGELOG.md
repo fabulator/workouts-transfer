@@ -1,6 +1,10 @@
 # Change Log
 All notable changes to this project will be documented in this file.
 
+## [0.76.0] 2020-05-06
+### Changed
+- [6a03775](https://github.com/fabulator/workouts-transfer/commit/6a03775aef5e9266682a36f060032ed764559a4b) Update dependency mathjs to v6.6.5
+
 ## [0.75.0] 2020-05-05
 ### Changed
 - [21a8ed6](https://github.com/fabulator/workouts-transfer/commit/21a8ed6a568fd0aa56d805f985beec040d0c2d86) Update dependency luxon to v1.24.1
