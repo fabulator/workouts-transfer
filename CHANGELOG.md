@@ -1,6 +1,10 @@
 # Change Log
 All notable changes to this project will be documented in this file.
 
+## [1.3.0] 2020-05-31
+### Added
+- [15a819c](https://github.com/fabulator/workouts-transfer/commit/15a819c98d988a5266322aa8dec3da8e827c452e) Option to change copied workout.
+
 ## [1.2.0] 2020-05-31
 ### Changed
 - [3398194](https://github.com/fabulator/workouts-transfer/commit/339819412e33bf11b9ea0417ad8fc99298bf925d) Update dependency mathjs to v7.0.1
