@@ -28,7 +28,7 @@ export default class FitbitTransferAdapter implements TransferAdapter {
 
         const activity = activities[0];
 
-        if (activity.getStart().plus({ minutes: 1 }) > workout.getStart()) {
+        if (activity.getStart().plus({ minutes: 1 }) < workout.getStart()) {
             return null;
         }
 

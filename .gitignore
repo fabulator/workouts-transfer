@@ -4,3 +4,5 @@ node_modules
 .idea
 dev
 tests_results
+.yalc
+yalc.lock
