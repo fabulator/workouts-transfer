@@ -1,4 +1,5 @@
 import { injectable } from 'inversify';
+import { Workout } from 'fitness-models';
 import { TransferAdapter } from './transfer-adapters/TransferAdapter';
 
 @injectable()
@@ -12,13 +13,15 @@ export default class WorkoutTransfer {
         this.to = to;
     }
 
-    public async copyWorkout(id: string): Promise<string | null> {
+    public async copyWorkout(id: string, extender?: (workout: Workout) => Promise<Workout>): Promise<string | null> {
         const workoutToCopy = await this.from.getWorkout(id);
 
         if (await this.to.findUniversalWorkout(workoutToCopy)) {
             return null;
         }
 
-        return this.to.createWorkout(workoutToCopy);
+        const enhacedWorkout = extender ? (await extender(workoutToCopy)) : workoutToCopy;
+
+        return this.to.createWorkout(enhacedWorkout);
     }
 }
