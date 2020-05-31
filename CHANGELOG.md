@@ -1,6 +1,10 @@
 # Change Log
 All notable changes to this project will be documented in this file.
 
+## [1.1.1] 2020-05-31
+### Fixed
+- [fd47f06](https://github.com/fabulator/workouts-transfer/commit/fd47f0641f9aed8f6651a42321f4758f98e43568) Detecting existing Fitbit workouts
+
 ## [1.1.0] 2020-05-18
 ### Changed
 - [5d81d80](https://github.com/fabulator/workouts-transfer/commit/5d81d80e23ab8f3f1dffc71a226daa3789517278) Update dependency fitness-libraries to ^0.180.0
