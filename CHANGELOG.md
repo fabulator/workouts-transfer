@@ -1,6 +1,12 @@
 # Change Log
 All notable changes to this project will be documented in this file.
 
+## [1.10.0] 2020-06-25
+### Changed
+- [1c7bfca](https://github.com/fabulator/workouts-transfer/commit/1c7bfca756f894f8932d1745b58c16344630b2c3) Update dependency @types/luxon to v1.24.1
+- [57f3ebc](https://github.com/fabulator/workouts-transfer/commit/57f3ebc0d44c480285b413c2d74ded98d08c15d7) Update dev dependency ts-jest to v26.1.1 
+- [9cec3ca](https://github.com/fabulator/workouts-transfer/commit/9cec3ca527d2d201451c09d3d273edfe7ec5678a) Update dev dependency cross-fetch to v3.0.5 
+
 ## [1.9.0] 2020-06-14
 ### Changed
 - [072b5e5](https://github.com/fabulator/workouts-transfer/commit/072b5e537f93b9f8c8821455a53ebd5f7a7eaa3c) Update dependency fitness-libraries to v4.15.0
