@@ -18,6 +18,7 @@ export default class StravaConvertor implements WorkoutConvertor<Activity> {
         { stravaId: Activity.ACTIVITY_TYPES.WEIGHT_TRAINING, id: WORKOUT_TYPES.WEIGHT_TRAINING },
         { stravaId: Activity.ACTIVITY_TYPES.WALK, id: WORKOUT_TYPES.WALKING },
         { stravaId: Activity.ACTIVITY_TYPES.WORKUT, id: WORKOUT_TYPES.CIRKUIT_TRAINING },
+        { stravaId: Activity.ACTIVITY_TYPES.YOGA, id: WORKOUT_TYPES.YOGA },
     ];
 
     private async getUniversalPoints(activity: Activity<number>): Promise<Point[]> {
