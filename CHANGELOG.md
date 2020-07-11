@@ -1,6 +1,10 @@
 # Change Log
 All notable changes to this project will be documented in this file.
 
+## [2.0.0] 2020-07-11
+### Changed
+- [4a23740](https://github.com/fabulator/workouts-transfer/commit/4a237402c8fbbba74f670485c8152ffd97774a13) Use fitness libraries as peer dependency BREAKING
+
 ## [1.14.0] 2020-07-06
 ### Changed
 - [5528e39](https://github.com/fabulator/workouts-transfer/commit/5528e399a191ee9b9185a487bbd04f62fe55039d) Update dependency fitness-libraries to v4.33.0
