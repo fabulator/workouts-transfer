@@ -1,6 +1,23 @@
 # Change Log
 All notable changes to this project will be documented in this file.
 
+## [2.2.0] 2020-07-18
+### Changed
+- [ca05411](https://github.com/fabulator/workouts-transfer/commit/ca05411066724d32bc9a798c14afb4161f64b331) Update dependency fitness-libraries to v5.4.0
+- [c8e02db](https://github.com/fabulator/workouts-transfer/commit/c8e02db0be518b1097fe5903b21da264b8b98440) Update dev dependency strava-api-handler to v3.14.0 
+- [82bc137](https://github.com/fabulator/workouts-transfer/commit/82bc1378390ff5d093c8eec8a39653baa16728c1) Update dev dependency fitbit-api-handler to v5.15.0 
+- [a5c08f8](https://github.com/fabulator/workouts-transfer/commit/a5c08f8be301b2e069ca16b2dd0278cbf82d4a51) Update dev dependency endomondo-api-handler to v6.24.0 
+- [2c8c34f](https://github.com/fabulator/workouts-transfer/commit/2c8c34f5eb99b62ef358dfccf218b9b1a1cce0b4) Update dev dependency garmin-api-handler to v3.18.0 
+
+## [2.1.0] 2020-07-15
+### Changed
+- [5e3f799](https://github.com/fabulator/workouts-transfer/commit/5e3f799bb75e5809d54fac32b2fdc3bc6a834b49) Update dependency mathjs to v7.1.0
+- [bae518d](https://github.com/fabulator/workouts-transfer/commit/bae518d2c2a0c4c3c45317a839c75790a780f931) Update dev dependency ts-jest to v26.1.2 
+
+## [2.0.0] 2020-07-11
+### Changed
+- [4a23740](https://github.com/fabulator/workouts-transfer/commit/4a237402c8fbbba74f670485c8152ffd97774a13) Use fitness libraries as peer dependency BREAKING
+
 ## [1.14.0] 2020-07-06
 ### Changed
 - [5528e39](https://github.com/fabulator/workouts-transfer/commit/5528e399a191ee9b9185a487bbd04f62fe55039d) Update dependency fitness-libraries to v4.33.0
