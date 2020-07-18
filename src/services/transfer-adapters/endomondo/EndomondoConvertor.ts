@@ -1,20 +1,15 @@
+import { Point as EndomondoPoint, Workout as EndomondoWorkout } from 'endomondo-api-handler';
+import { ENDOMONDO } from 'fitness-libraries';
+import { Point, Workout } from 'fitness-models';
 import { inject, injectable } from 'inversify';
 import { DateTime } from 'luxon';
-import { ENDOMONDO } from 'fitness-libraries';
 import { unit } from 'mathjs';
-import {
-    Point as EndomondoPoint,
-    Workout as EndomondoWorkout,
-} from 'endomondo-api-handler';
-import { Workout, Point } from 'fitness-models';
-import { WorkoutConvertor } from '../WorkoutConvertor';
 import gpx from '../../../parsers/gpx';
+import { WorkoutConvertor } from '../WorkoutConvertor';
 
 @injectable()
 export default class EndomondoConvertor implements WorkoutConvertor<EndomondoWorkout> {
-    public constructor(
-        @inject(ENDOMONDO.EndomondoService) private endomondoService: ENDOMONDO.EndomondoService,
-    ) {}
+    public constructor(@inject(ENDOMONDO.EndomondoService) private endomondoService: ENDOMONDO.EndomondoService) {}
 
     protected pointToUniversal({
         time,
@@ -24,12 +19,12 @@ export default class EndomondoConvertor implements WorkoutConvertor<EndomondoWor
         cadence,
         hr,
     }: {
-        time: DateTime,
-        latitude?: number,
-        longitude?: number,
-        altitude?: number,
-        cadence?: number,
-        hr?: number,
+        altitude?: number;
+        cadence?: number;
+        hr?: number;
+        latitude?: number;
+        longitude?: number;
+        time: DateTime;
     }): Point {
         return new Point({
             time,
@@ -50,7 +45,6 @@ export default class EndomondoConvertor implements WorkoutConvertor<EndomondoWor
 
         return new Workout({
             ...workout.toObject(),
-            privacy: workout.getWorkoutPrivacy(),
             points: gpxPoints ? gpxPoints.map((point) => this.pointToUniversal(point)) : [],
             notes: workout.getMessage(),
         });
@@ -68,14 +62,8 @@ export default class EndomondoConvertor implements WorkoutConvertor<EndomondoWor
             points: workout.getPoints().map((point: Point) => this.pointFromUniversal(point)),
             id: undefined,
             source: undefined,
-            workoutPrivacy: workout.getPrivacy(),
-            // @ts-ignore
             typeId,
-            hashtags: [
-                ...(workout.isRace ? ['race'] : []),
-                ...(workout.isCommute ? ['work'] : []),
-                ...workout.getHashtags(),
-            ],
+            hashtags: [...(workout.isRace ? ['race'] : []), ...(workout.isCommute ? ['work'] : []), ...workout.getHashtags()],
             message: workout.getNotes(),
         });
     }

@@ -1,6 +1,6 @@
-import { inject, injectable } from 'inversify';
-import { FITBIT } from 'fitness-libraries';
+import * as FITBIT from 'fitness-libraries/dist/modules/fitbit';
 import { Workout } from 'fitness-models';
+import { inject, injectable } from 'inversify';
 import { TransferAdapter } from '../TransferAdapter';
 import FitbitConvertor from './FitbitConvertor';
 
@@ -48,7 +48,6 @@ export default class FitbitTransferAdapter implements TransferAdapter {
     public async createWorkout(workout: Workout): Promise<string> {
         const activity = await this.fitbitConvertor.fromUniversal(workout);
         const createdActivity = await this.fitbitService.createActivity(activity);
-        // @ts-ignore
-        return createdActivity.getId();
+        return `${createdActivity.getId()}`;
     }
 }

@@ -1,24 +1,22 @@
+import * as STRAVA from 'fitness-libraries/dist/modules/strava';
+import { Point, Workout, WorkoutType } from 'fitness-models';
 import { inject, injectable } from 'inversify';
-import { Activity } from 'strava-api-handler';
 import { DateTime } from 'luxon';
-import { Workout, Point, WORKOUT_TYPES } from 'fitness-models';
-import { STRAVA } from 'fitness-libraries';
+import { Activity, ActivityType } from 'strava-api-handler';
 import { WorkoutConvertor } from '../WorkoutConvertor';
 
 @injectable()
 export default class StravaConvertor implements WorkoutConvertor<Activity> {
-    public constructor(
-        @inject(STRAVA.StravaService) private stravaService: STRAVA.StravaService,
-    ) {}
+    public constructor(@inject(STRAVA.StravaService) private stravaService: STRAVA.StravaService) {}
 
-    private activityMap: { stravaId: string, id: WORKOUT_TYPES.WorkoutType }[] = [
-        { stravaId: Activity.ACTIVITY_TYPES.RIDE, id: WORKOUT_TYPES.CYCLING_SPORT },
-        { stravaId: Activity.ACTIVITY_TYPES.RUN, id: WORKOUT_TYPES.RUNNING },
-        { stravaId: Activity.ACTIVITY_TYPES.SWIM, id: WORKOUT_TYPES.SWIMMING },
-        { stravaId: Activity.ACTIVITY_TYPES.WEIGHT_TRAINING, id: WORKOUT_TYPES.WEIGHT_TRAINING },
-        { stravaId: Activity.ACTIVITY_TYPES.WALK, id: WORKOUT_TYPES.WALKING },
-        { stravaId: Activity.ACTIVITY_TYPES.WORKUT, id: WORKOUT_TYPES.CIRKUIT_TRAINING },
-        { stravaId: Activity.ACTIVITY_TYPES.YOGA, id: WORKOUT_TYPES.YOGA },
+    private activityMap: { id: WorkoutType; stravaId: ActivityType }[] = [
+        { stravaId: ActivityType.RIDE, id: WorkoutType.CYCLING_SPORT },
+        { stravaId: ActivityType.RUN, id: WorkoutType.RUNNING },
+        { stravaId: ActivityType.SWIM, id: WorkoutType.SWIMMING },
+        { stravaId: ActivityType.WEIGHT_TRAINING, id: WorkoutType.WEIGHT_TRAINING },
+        { stravaId: ActivityType.WALK, id: WorkoutType.WALKING },
+        { stravaId: ActivityType.WORKUT, id: WorkoutType.CIRKUIT_TRAINING },
+        { stravaId: ActivityType.YOGA, id: WorkoutType.YOGA },
     ];
 
     private async getUniversalPoints(activity: Activity<number>): Promise<Point[]> {
@@ -45,7 +43,6 @@ export default class StravaConvertor implements WorkoutConvertor<Activity> {
             throw new Error(`Cannot find type id ${activity.getTypeId()}`);
         }
 
-        // @ts-ignore
         const workout = new Workout({
             ...activity.toObject(),
             typeId: type.id,
@@ -75,7 +72,6 @@ export default class StravaConvertor implements WorkoutConvertor<Activity> {
 
         const title = workout.getTitle();
 
-        // @ts-ignore
         return new Activity({
             ...workout.toObject(),
             title: title || type.stravaId,

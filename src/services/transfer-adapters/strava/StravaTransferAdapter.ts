@@ -1,11 +1,12 @@
-import { inject, injectable } from 'inversify';
+import * as STRAVA from 'fitness-libraries/dist/modules/strava';
 import { Workout } from 'fitness-models';
-import { STRAVA } from 'fitness-libraries';
+import { inject, injectable } from 'inversify';
+import { Activity } from 'strava-api-handler';
 import { TransferAdapter } from '../TransferAdapter';
 import StravaConvertor from './StravaConvertor';
 
 @injectable()
-export default class StravaTransferAdapter implements TransferAdapter {
+export default class StravaTransferAdapter implements TransferAdapter<Activity> {
     public constructor(
         @inject(STRAVA.StravaService) private stravaService: STRAVA.StravaService,
         @inject(StravaConvertor) private stravaConvertor: StravaConvertor,
@@ -42,12 +43,11 @@ export default class StravaTransferAdapter implements TransferAdapter {
     public async createWorkout(workout: Workout): Promise<string> {
         const activity = await this.stravaConvertor.fromUniversal(workout);
 
-        // @ts-ignore
-        return (
-            await this.stravaService.createActivity(
-                activity,
-                workout.getPoints().length === 0 ? undefined : workout.toGpx(),
-            )
-        ).getId().toString();
+        const createdActivity = await this.stravaService.createActivity(
+            activity,
+            workout.getPoints().length === 0 ? undefined : workout.toGpx(),
+        );
+
+        return (createdActivity.getId() as number).toString();
     }
 }

@@ -1,6 +1,7 @@
+import { DateTime } from 'luxon';
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-ignore
 import xml2js from 'xml2js';
-import { DateTime } from 'luxon';
 
 const parser = new xml2js.Parser();
 
@@ -17,13 +18,13 @@ function parse(data: any): any {
 }
 
 interface Point {
-    time: DateTime,
-    latitude?: number,
-    longitude?: number,
-    altitude?: number,
-    distance?: number,
-    hr?: number,
-    cadence?: number,
+    altitude?: number;
+    cadence?: number;
+    distance?: number;
+    hr?: number;
+    latitude?: number;
+    longitude?: number;
+    time: DateTime;
 }
 
 // eslint-disable-next-line sonarjs/cognitive-complexity

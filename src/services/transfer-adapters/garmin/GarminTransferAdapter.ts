@@ -1,7 +1,7 @@
-import { inject, injectable } from 'inversify';
+import * as GARMIN from 'fitness-libraries/dist/modules/garmin';
 import { Workout } from 'fitness-models';
-import { GARMIN } from 'fitness-libraries';
 import { Activity } from 'garmin-api-handler';
+import { inject, injectable } from 'inversify';
 import { TransferAdapter } from '../TransferAdapter';
 import GarminConvertor from './GarminConvertor';
 
@@ -24,9 +24,11 @@ export default class GarminTransferAdapter implements TransferAdapter {
             limit: 10,
         });
 
-        const activity = activities.find((activity: Activity) => {
-            return workout.getStart().minus({ minutes: 3 }) < activity.getStart()
-                && workout.getStart().plus({ minutes: 3 }) > activity.getStart();
+        const activity = activities.find((foundActivity: Activity) => {
+            return (
+                workout.getStart().minus({ minutes: 3 }) < foundActivity.getStart() &&
+                workout.getStart().plus({ minutes: 3 }) > foundActivity.getStart()
+            );
         });
 
         if (activity) {
@@ -49,11 +51,8 @@ export default class GarminTransferAdapter implements TransferAdapter {
     public async createWorkout(workout: Workout): Promise<string> {
         const activity = await this.garminConvertor.fromUniversal(workout);
 
-        return (
-            await this.garminService.createActivity(
-                activity,
-                workout.getPoints().length === 0 ? undefined : workout.toGpx(),
-            )
-        ).getId().toString();
+        return (await this.garminService.createActivity(activity, workout.getPoints().length === 0 ? undefined : workout.toGpx()))
+            .getId()
+            .toString();
     }
 }

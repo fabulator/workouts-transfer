@@ -1,27 +1,27 @@
+import { Activity, ActivityType, IntradayResource } from 'fitbit-api-handler';
+import * as FITBIT from 'fitness-libraries/dist/modules/fitbit';
+import { Point, Workout, WorkoutType } from 'fitness-models';
 import { inject, injectable } from 'inversify';
-import { Activity, ACTIVITY_TYPES, TYPES } from 'fitbit-api-handler';
 import { unit } from 'mathjs';
-import { Workout, Point, WORKOUT_TYPES } from 'fitness-models';
-import { FITBIT } from 'fitness-libraries';
-import { WorkoutConvertor } from '../WorkoutConvertor';
 import tcx from '../../../parsers/tcx';
+import { WorkoutConvertor } from '../WorkoutConvertor';
 
 @injectable()
 export default class FitbitConvertor implements WorkoutConvertor<Activity> {
-    public constructor(
-        @inject(FITBIT.FitbitService) private fitbitService: FITBIT.FitbitService,
-    ) {}
+    public constructor(@inject(FITBIT.FitbitService) private fitbitService: FITBIT.FitbitService) {}
 
-    private activityMap: { fitbitId: TYPES.ActivityType, id: WORKOUT_TYPES.WorkoutType }[] = [
-        { fitbitId: ACTIVITY_TYPES.BIKE, id: WORKOUT_TYPES.CYCLING_SPORT },
-        { fitbitId: ACTIVITY_TYPES.RUNNING, id: WORKOUT_TYPES.RUNNING },
-        { fitbitId: ACTIVITY_TYPES.FENCING, id: WORKOUT_TYPES.FENCING },
-        { fitbitId: ACTIVITY_TYPES.WALKING, id: WORKOUT_TYPES.WALKING },
-        { fitbitId: ACTIVITY_TYPES.SKATEBOARDING, id: WORKOUT_TYPES.SKATEBOARDING },
-        { fitbitId: ACTIVITY_TYPES.YOGA, id: WORKOUT_TYPES.YOGA },
-        { fitbitId: ACTIVITY_TYPES.SWIMMING, id: WORKOUT_TYPES.SWIMMING },
-        { fitbitId: ACTIVITY_TYPES.WEIGHT_TRAINING, id: WORKOUT_TYPES.WEIGHT_TRAINING },
-        { fitbitId: ACTIVITY_TYPES.CIRKUIT_TRAINING, id: WORKOUT_TYPES.CIRKUIT_TRAINING },
+    private activityMap: { fitbitId: ActivityType; id: WorkoutType }[] = [
+        { fitbitId: ActivityType.BIKE, id: WorkoutType.CYCLING_SPORT },
+        { fitbitId: ActivityType.RUNNING, id: WorkoutType.RUNNING },
+        { fitbitId: ActivityType.FENCING, id: WorkoutType.FENCING },
+        { fitbitId: ActivityType.WALKING, id: WorkoutType.WALKING },
+        { fitbitId: ActivityType.SKATEBOARDING, id: WorkoutType.SKATEBOARDING },
+        { fitbitId: ActivityType.YOGA, id: WorkoutType.YOGA },
+        { fitbitId: ActivityType.SWIMMING, id: WorkoutType.SWIMMING },
+        { fitbitId: ActivityType.WEIGHT_TRAINING, id: WorkoutType.WEIGHT_TRAINING },
+        { fitbitId: ActivityType.CIRKUIT_TRAINING, id: WorkoutType.CIRKUIT_TRAINING },
+        { fitbitId: 2050, id: WorkoutType.WEIGHT_TRAINING },
+        { fitbitId: 3104, id: WorkoutType.CIRKUIT_TRAINING },
     ];
 
     private async getUniversalPoints(activityId: number): Promise<Point[]> {
@@ -51,10 +51,9 @@ export default class FitbitConvertor implements WorkoutConvertor<Activity> {
         const type = this.activityMap.find((item) => item.fitbitId === activity.getTypeId());
 
         if (!type) {
-            throw new Error(`Cannot find type id ${activity.getTypeId()}`);
+            throw new Error(`Cannot find type id ${activity.getTypeId()} of activity ${activity.getId()}`);
         }
 
-        // @ts-ignore
         const workout = new Workout({
             ...activity.toObject(),
             typeId: type.id,
@@ -72,9 +71,9 @@ export default class FitbitConvertor implements WorkoutConvertor<Activity> {
             return workout.setPoints(points);
         }
 
-        if (activity.getTypeId() === ACTIVITY_TYPES.WALKING) {
+        if (activity.getTypeId() === ActivityType.WALKING) {
             const distanceData = await this.fitbitService.getIntradayData(
-                'distance',
+                IntradayResource.DISTANCE,
                 activity.getStart(),
                 activity.getEnd(),
             );
@@ -91,7 +90,6 @@ export default class FitbitConvertor implements WorkoutConvertor<Activity> {
             throw new Error(`Cannot find type id ${workout.getTypeId()}`);
         }
 
-        // @ts-ignore
         return new Activity({
             ...workout.toObject(),
             typeId: type.fitbitId,

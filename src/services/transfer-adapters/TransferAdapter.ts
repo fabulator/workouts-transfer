@@ -1,7 +1,8 @@
 import { Workout } from 'fitness-models';
 
-export interface TransferAdapter {
-    getWorkout: (id: string) => Promise<Workout>,
-    findUniversalWorkout: (workout: Workout) => Promise<Workout | null>,
-    createWorkout: (workout: Workout) => Promise<string>,
+export interface TransferAdapter<NativeWorkout = any> {
+    createWorkout: (workout: Workout) => Promise<string>;
+    findUniversalWorkout: (workout: Workout) => Promise<Workout | null>;
+    findWorkout: (workout: Workout) => Promise<NativeWorkout | null>;
+    getWorkout: (id: string) => Promise<Workout>;
 }

@@ -1,59 +1,65 @@
 {
-    "name": "workouts-transfer",
-    "version": "1.14.0",
-    "description": "Workouts transfer between services as inversify modules.",
-    "main": "dist/index.js",
-    "types": "dist/index.d.ts",
-    "author": "Michal Ozogán <michal@ozogan.eu>",
-    "license": "Apache-2.0",
-    "keywords": [
-        "personal",
-        "syncing"
-    ],
-    "repository": {
-        "type": "git",
-        "url": "git+ssh://git@github.com/fabulator/workouts-transfer.git"
-    },
-    "bugs": {
-        "url": "https://github.com/fabulator/workouts-transfer/issues"
-    },
-    "homepage": "https://github.com/fabulator/workouts-transfer",
-    "scripts": {
-        "lint": "eslint --ext .ts ./src ./tests",
-        "lint:export": "npm run lint -- -o ./tests_results/checkstyle/js-checkstyle.xml -f checkstyle",
-        "tsc": "tsc --noEmit",
-        "develop": "tsc --watch",
-        "test": "jest",
-        "build": "tsc",
-        "test:build": "npm run test -- --config jest.config.build.js",
-        "test:all": "npm run lint && npm run tsc && npm run test",
-        "prepublishOnly": "npm run build && npm run test:build",
-        "release": "semantic-release"
-    },
-    "devDependencies": {
-        "@socifi/commitlint-config": "^1.1.0",
-        "@socifi/eslint-config": "^2.10.2",
-        "@socifi/jest-config": "^2.4.1",
-        "@socifi/rollup-config": "^2.2.2",
-        "cross-fetch": "^3.0.5",
-        "ts-jest": "^26.1.1",
-        "semantic-release-config-fabulator": "^1.3.2",
-        "fitness-libraries": "^5.0.0",
-        "endomondo-api-handler": "^6.23.0",
-        "fitbit-api-handler": "^5.14.0",
-        "garmin-api-handler": "^3.17.0",
-        "strava-api-handler": "^3.13.0"
-    },
-    "peerDependencies": {
-        "fitness-libraries": "^5.0.0"
-    },
-    "dependencies": {
-        "@types/luxon": "^1.24.1",
-        "@types/mathjs": "^6.0.5",
-        "inversify": "^5.0.1",
-        "luxon": "^1.24.1",
-        "mathjs": "^7.0.2",
-        "reflect-metadata": "^0.1.13",
-        "xml2js": "^0.4.23"
-    }
+  "name": "workouts-transfer",
+  "version": "1.14.0",
+  "description": "Workouts transfer between services as inversify modules.",
+  "keywords": [
+    "personal",
+    "syncing"
+  ],
+  "homepage": "https://github.com/fabulator/workouts-transfer",
+  "bugs": {
+    "url": "https://github.com/fabulator/workouts-transfer/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/fabulator/workouts-transfer.git"
+  },
+  "license": "Apache-2.0",
+  "author": "Michal Ozogán <michal@ozogan.eu>",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "tsc",
+    "develop": "tsc --watch",
+    "lint": "eslint ./ --ext .js --ext .json --ext .ts",
+    "lint:export": "npm run lint -- -o ./tests_results/checkstyle/js-checkstyle.xml -f checkstyle",
+    "lint:fix": "npm run lint -- --fix",
+    "prepublishOnly": "npm run build && npm run test:build",
+    "release": "semantic-release",
+    "test": "jest",
+    "test:all": "npm run lint && npm run tsc && npm run test",
+    "test:build": "npm run test -- --config jest.config.build.js",
+    "tsc": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@types/luxon": "^1.24.1",
+    "@types/mathjs": "^6.0.5",
+    "inversify": "^5.0.1",
+    "luxon": "^1.24.1",
+    "mathjs": "^7.1.0",
+    "reflect-metadata": "^0.1.13",
+    "xml2js": "^0.4.23"
+  },
+  "devDependencies": {
+    "commitlint-config-fabulator": "^1.0.0",
+    "cross-fetch": "^3.0.5",
+    "endomondo-api-handler": "^7.0.1",
+    "eslint-config-fabulator": "^1.0.2",
+    "fitbit-api-handler": "^6.0.1",
+    "fitness-libraries": "^5.6.0",
+    "fitness-models": "^3.0.1",
+    "garmin-api-handler": "^4.0.0",
+    "jest-config-fabulator": "^1.0.0",
+    "semantic-release-config-fabulator": "^2.5.0",
+    "strava-api-handler": "^4.0.0",
+    "ts-jest": "^26.1.3"
+  },
+  "peerDependencies": {
+    "endomondo-api-handler": "^7.0.1",
+    "fitbit-api-handler": "^6.0.1",
+    "fitness-libraries": "^5.6.0",
+    "fitness-models": "^3.0.1",
+    "garmin-api-handler": "^4.0.0",
+    "strava-api-handler": "^4.0.0"
+  }
 }

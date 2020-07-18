@@ -1,6 +1,6 @@
-import { inject, injectable } from 'inversify';
-import { Workout } from 'fitness-models';
 import { ENDOMONDO } from 'fitness-libraries';
+import { Workout } from 'fitness-models';
+import { inject, injectable } from 'inversify';
 import { TransferAdapter } from '../TransferAdapter';
 import EndomondoConvertor from './EndomondoConvertor';
 
