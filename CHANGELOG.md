@@ -1,6 +1,11 @@
 # Change Log
 All notable changes to this project will be documented in this file.
 
+## v2.3.0 (2020-07-18)
+### Changed
+- [61ed0de](https://github.com/fabulator/workouts-transfer/commit/61ed0de34cea7d838751117a6ecfb330e17b9711) Update dependencies
+- [682754d](https://github.com/fabulator/workouts-transfer/commit/682754d4c2f2229afc7e6a3212c6df4cf4612c45) Update dev dependency ts-jest to v26.1.3 
+
 ## [2.2.0] 2020-07-18
 ### Changed
 - [ca05411](https://github.com/fabulator/workouts-transfer/commit/ca05411066724d32bc9a798c14afb4161f64b331) Update dependency fitness-libraries to v5.4.0
