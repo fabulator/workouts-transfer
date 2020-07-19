@@ -1,6 +1,10 @@
 # Change Log
 All notable changes to this project will be documented in this file.
 
+## v2.4.0 (2020-07-19)
+### Changed
+- [d2ef484](https://github.com/fabulator/workouts-transfer/commit/d2ef4847423017723fc3bafaf711dd9c0b6a7a1d) Update dependency strava-api-handler to v4.0.1
+
 ## v2.3.0 (2020-07-18)
 ### Changed
 - [61ed0de](https://github.com/fabulator/workouts-transfer/commit/61ed0de34cea7d838751117a6ecfb330e17b9711) Update dependencies
