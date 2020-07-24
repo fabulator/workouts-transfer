@@ -1,6 +1,10 @@
 # Change Log
 All notable changes to this project will be documented in this file.
 
+## v2.7.0 (2020-07-24)
+### Changed
+- [f44c329](https://github.com/fabulator/workouts-transfer/commit/f44c3294e65382fcb9bb636daefec196d3648ea7) Update dependency fitbit-api-handler to v6.1.0
+
 ## v2.6.0 (2020-07-22)
 ### Changed
 - [3b7fb6a](https://github.com/fabulator/workouts-transfer/commit/3b7fb6ac8cc3800111d528e761e178532f44d46d) Update dependency @types/luxon to v1.24.2
