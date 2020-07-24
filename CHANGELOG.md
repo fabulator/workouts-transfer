@@ -1,6 +1,10 @@
 # Change Log
 All notable changes to this project will be documented in this file.
 
+## v2.8.0 (2020-07-24)
+### Changed
+- [85811df](https://github.com/fabulator/workouts-transfer/commit/85811dfd6abc06374ab70a11053a56e61e8dbb4a) Update dependency fitness-models to v3.1.0
+
 ## v2.7.0 (2020-07-24)
 ### Changed
 - [f44c329](https://github.com/fabulator/workouts-transfer/commit/f44c3294e65382fcb9bb636daefec196d3648ea7) Update dependency fitbit-api-handler to v6.1.0
