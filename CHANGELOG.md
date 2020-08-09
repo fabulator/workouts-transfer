@@ -1,6 +1,10 @@
 # Change Log
 All notable changes to this project will be documented in this file.
 
+## v2.10.0 (2020-08-09)
+### Changed
+- [4e789ef](https://github.com/fabulator/workouts-transfer/commit/4e789efa2e5a8294dc9719d2fd0b3c99ff06ca76) Update dependencies
+
 ## v2.9.0 (2020-07-25)
 ### Changed
 - [26f0b59](https://github.com/fabulator/workouts-transfer/commit/26f0b597c16ef280eece4752f12b9a0c3a6e8d6f) Update dependency @types/luxon to v1.24.3
