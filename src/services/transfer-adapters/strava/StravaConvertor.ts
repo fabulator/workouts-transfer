@@ -2,6 +2,7 @@ import * as STRAVA from 'fitness-libraries/dist/modules/strava';
 import { Point, Workout, WorkoutType } from 'fitness-models';
 import { inject, injectable } from 'inversify';
 import { DateTime } from 'luxon';
+import { unit } from 'mathjs';
 import { Activity, ActivityType } from 'strava-api-handler';
 import { WorkoutConvertor } from '../WorkoutConvertor';
 
@@ -26,12 +27,15 @@ export default class StravaConvertor implements WorkoutConvertor<Activity> {
 
         const points = await this.stravaService.getActivityPoint(activity);
         return points.map((point) => {
+            const { altitude } = point;
             return new Point({
                 time: DateTime.fromJSDate(point.time),
                 latitude: point.lat,
                 longitude: point.lon,
                 cadence: point.cadence,
-                hr: point.hr,
+                hr: point.heartrate,
+                temperature: point.temp,
+                ...(altitude != null ? { altitude: unit(altitude, 'm') } : {}),
             });
         });
     }

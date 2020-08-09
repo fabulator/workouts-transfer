@@ -13,12 +13,12 @@ export default class GarminTransferAdapter implements TransferAdapter {
     ) {}
 
     public async getWorkout(id: string): Promise<Workout> {
-        const activity = await this.garminService.getActivity(Number(id));
+        const activity = await this.garminService.getApi().getActivity(Number(id));
         return this.garminConvertor.toUniversal(activity);
     }
 
     public async findWorkout(workout: Workout) {
-        const activities = await this.garminService.getActivities({
+        const activities = await this.garminService.getApi().getActivities({
             startDate: workout.getStart(),
             endDate: workout.getStart(),
             limit: 10,
@@ -51,8 +51,15 @@ export default class GarminTransferAdapter implements TransferAdapter {
     public async createWorkout(workout: Workout): Promise<string> {
         const activity = await this.garminConvertor.fromUniversal(workout);
 
-        return (await this.garminService.createActivity(activity, workout.getPoints().length === 0 ? undefined : workout.toGpx()))
-            .getId()
-            .toString();
+        const gpx = workout.getPoints().length === 0 ? undefined : workout.toGpx();
+
+        const createdActivity = await (async () => {
+            if (!gpx) {
+                return this.garminService.createActivity(activity);
+            }
+            return this.garminService.createActivity(activity, 'gpx', gpx);
+        })();
+
+        return createdActivity.getId().toString();
     }
 }

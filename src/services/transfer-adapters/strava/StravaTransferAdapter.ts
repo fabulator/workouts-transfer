@@ -43,10 +43,14 @@ export default class StravaTransferAdapter implements TransferAdapter<Activity> 
     public async createWorkout(workout: Workout): Promise<string> {
         const activity = await this.stravaConvertor.fromUniversal(workout);
 
-        const createdActivity = await this.stravaService.createActivity(
-            activity,
-            workout.getPoints().length === 0 ? undefined : workout.toGpx(),
-        );
+        const gpx = workout.getPoints().length === 0 ? undefined : workout.toGpx();
+
+        const createdActivity = await (async () => {
+            if (!gpx) {
+                return this.stravaService.createActivity(activity);
+            }
+            return this.stravaService.createActivity(activity, 'gpx', gpx);
+        })();
 
         return (createdActivity.getId() as number).toString();
     }

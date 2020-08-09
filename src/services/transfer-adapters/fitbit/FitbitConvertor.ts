@@ -25,7 +25,7 @@ export default class FitbitConvertor implements WorkoutConvertor<Activity> {
     ];
 
     private async getUniversalPoints(activityId: number): Promise<Point[]> {
-        const tcxData = await this.fitbitService.getActivityTcx(activityId);
+        const tcxData = await this.fitbitService.getApi().getActivityTcx(activityId);
         const points = await tcx(tcxData);
 
         if (!points) {
@@ -72,11 +72,9 @@ export default class FitbitConvertor implements WorkoutConvertor<Activity> {
         }
 
         if (activity.getTypeId() === ActivityType.WALKING) {
-            const distanceData = await this.fitbitService.getIntradayData(
-                IntradayResource.DISTANCE,
-                activity.getStart(),
-                activity.getEnd(),
-            );
+            const distanceData = await this.fitbitService
+                .getApi()
+                .getIntradayData(IntradayResource.DISTANCE, activity.getStart(), activity.getEnd());
             return workout.setDistance(unit(distanceData.total, 'km'));
         }
 
