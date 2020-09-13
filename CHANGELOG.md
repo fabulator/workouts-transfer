@@ -1,6 +1,10 @@
 # Change Log
 All notable changes to this project will be documented in this file.
 
+## v2.10.4 (2020-09-13)
+### Fixed
+- [452fad2](https://github.com/fabulator/workouts-transfer/commit/452fad2a45a5d4d5382026417a9a69b56908e4ad) Update lock for security updated
+
 ## v2.10.3 (2020-09-13)
 ### Fixed
 - [ac7e99a](https://github.com/fabulator/workouts-transfer/commit/ac7e99adfd4ae3e9bdf883d49beac661de597afd) Fitbit transfers
