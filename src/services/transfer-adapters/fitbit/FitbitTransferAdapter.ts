@@ -28,11 +28,11 @@ export default class FitbitTransferAdapter implements TransferAdapter {
 
         const activity = response.activities[0];
 
-        if (activity.getStart().plus({ minutes: 1 }) < workout.getStart()) {
-            return null;
+        if (activity.getStart() < workout.getStart().plus({ minutes: 1 })) {
+            return activity;
         }
 
-        return activity;
+        return null;
     }
 
     public async findUniversalWorkout(workout: Workout) {

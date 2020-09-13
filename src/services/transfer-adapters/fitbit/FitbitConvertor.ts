@@ -22,6 +22,7 @@ export default class FitbitConvertor implements WorkoutConvertor<Activity> {
         { fitbitId: ActivityType.CIRKUIT_TRAINING, id: WorkoutType.CIRKUIT_TRAINING },
         { fitbitId: 2050, id: WorkoutType.WEIGHT_TRAINING },
         { fitbitId: 3104, id: WorkoutType.CIRKUIT_TRAINING },
+        { fitbitId: 52001, id: WorkoutType.YOGA },
     ];
 
     private async getUniversalPoints(activityId: number): Promise<Point[]> {
