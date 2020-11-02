@@ -1,6 +1,10 @@
 # Change Log
 All notable changes to this project will be documented in this file.
 
+## v2.10.34 (2020-11-02)
+### Fixed
+- [7cc23ad](https://github.com/fabulator/workouts-transfer/commit/7cc23ad8d4ac9067ebc534264a0b6e3d1725c643) Update lock for security updated
+
 ## v2.10.33 (2020-11-02)
 ### Fixed
 - [88721d4](https://github.com/fabulator/workouts-transfer/commit/88721d4658a0cb819971b9906322968409ae4504) Update lock for security updated
