@@ -52,7 +52,7 @@
     "jest-config-fabulator": "^1.0.0",
     "semantic-release-config-fabulator": "^2.6.0",
     "strava-api-handler": "^4.4.0",
-    "ts-jest": "^26.1.4"
+    "ts-jest": "^27.0.0"
   },
   "peerDependencies": {
     "endomondo-api-handler": "^7.3.0",
