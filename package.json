@@ -33,7 +33,7 @@
   },
   "dependencies": {
     "@types/luxon": "^1.24.3",
-    "@types/mathjs": "^6.0.5",
+    "@types/mathjs": "^9.0.0",
     "cross-fetch": "^3.0.5",
     "inversify": "^5.0.1",
     "luxon": "^1.24.1",
