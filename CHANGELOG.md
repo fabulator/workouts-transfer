@@ -1,6 +1,15 @@
 # Change Log
 All notable changes to this project will be documented in this file.
 
+## v3.0.0 (2021-06-06)
+### Changed
+- [aa9e4e4](https://github.com/fabulator/workouts-transfer/commit/aa9e4e41cc83cf5aa8bc584ff5b12d09a40ae23b) Update dependency ini to 1.3.6 [SECURITY] (#197)
+
+Co-authored-by: Renovate Bot <bot@renovateapp.com>
+- [ec63aca](https://github.com/fabulator/workouts-transfer/commit/ec63aca59a4ceecbb55b6723d12a5f8c03ba49e0) Update dependency mathjs to v9 BREAKING (#194)
+
+Co-authored-by: Renovate Bot <bot@renovateapp.com>
+
 ## v2.10.51 (2020-11-30)
 ### Fixed
 - [59884d0](https://github.com/fabulator/workouts-transfer/commit/59884d02026777e21628cc8035c0510aa9aa0bc2) Update lock for security updated
