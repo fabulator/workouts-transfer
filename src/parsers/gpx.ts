@@ -38,11 +38,11 @@ function getCadence(point: any): number | undefined {
     }
 
     if (extensions[0][trackExtension] && extensions[0][trackExtension][0]['ns3:cad']) {
-        return Number(point.extensions[0][trackExtension][0]['ns3:cad'][0]);
+        return Number(extensions[0][trackExtension][0]['ns3:cad'][0]);
     }
 
     if (extensions[0][gpxExtension] && extensions[0]['gpxtpx:TrackPointExtension'][0]['gpxtpx:cad']) {
-        return Number(point.extensions[0][gpxExtension][0]['gpxtpx:cad'][0]);
+        return Number(extensions[0][gpxExtension][0]['gpxtpx:cad'][0]);
     }
 }
 
@@ -54,7 +54,7 @@ function getTemperature(point: any): number | undefined {
     }
 
     if (extensions[0][trackExtension] && extensions[0][trackExtension][0]['ns3:atemp']) {
-        return Number(point.extensions[0][trackExtension][0]['ns3:atemp'][0]);
+        return Number(extensions[0][trackExtension][0]['ns3:atemp'][0]);
     }
 }
 
@@ -66,11 +66,11 @@ function getHr(point: any): number | undefined {
     }
 
     if (extensions[0][gpxExtension] && extensions[0][gpxExtension][0]['gpxtpx:hr']) {
-        return Number(point.extensions[0][gpxExtension][0]['gpxtpx:hr'][0]);
+        return Number(extensions[0][gpxExtension][0]['gpxtpx:hr'][0]);
     }
 
     if (extensions[0][trackExtension] && extensions[0][trackExtension][0]['ns3:hr']) {
-        return Number(point.extensions[0][trackExtension][0]['ns3:hr'][0]);
+        return Number(extensions[0][trackExtension][0]['ns3:hr'][0]);
     }
 }
 

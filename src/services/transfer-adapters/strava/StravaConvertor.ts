@@ -27,14 +27,14 @@ export default class StravaConvertor implements WorkoutConvertor<Activity> {
 
         const points = await this.stravaService.getActivityPoint(activity);
         return points.map((point) => {
-            const { altitude } = point;
+            const { altitude, time, lat, lon, cadence, heartrate, temp } = point;
             return new Point({
-                time: DateTime.fromJSDate(point.time),
-                latitude: point.lat,
-                longitude: point.lon,
-                cadence: point.cadence,
-                hr: point.heartrate,
-                temperature: point.temp,
+                time: DateTime.fromJSDate(time),
+                latitude: lat,
+                longitude: lon,
+                cadence,
+                hr: heartrate,
+                temperature: temp,
                 ...(altitude != null ? { altitude: unit(altitude, 'm') } : {}),
             });
         });

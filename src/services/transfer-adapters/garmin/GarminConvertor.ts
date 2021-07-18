@@ -38,16 +38,16 @@ export default class GarminConvertor implements WorkoutConvertor<Activity> {
         }
 
         return points.map((point) => {
-            const { altitude } = point;
+            const { altitude, time, latitude, longitude, temperature, cadence, hr } = point;
 
             return new Point({
-                time: point.time,
-                latitude: point.latitude,
-                longitude: point.longitude,
+                time,
+                latitude,
+                longitude,
                 altitude: altitude != null ? unit(altitude, 'm') : undefined,
-                cadence: point.cadence,
-                temperature: point.temperature ? unit(point.temperature, 'celsius') : undefined,
-                hr: point.hr,
+                cadence,
+                temperature: temperature ? unit(temperature, 'celsius') : undefined,
+                hr,
             });
         });
     }

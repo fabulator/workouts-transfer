@@ -22,7 +22,7 @@ export default class FitbitConvertor implements WorkoutConvertor<Activity> {
         { fitbitId: ActivityType.CIRKUIT_TRAINING, id: WorkoutType.CIRKUIT_TRAINING },
         { fitbitId: 2050, id: WorkoutType.WEIGHT_TRAINING },
         { fitbitId: 3104, id: WorkoutType.CIRKUIT_TRAINING },
-        { fitbitId: 52001, id: WorkoutType.YOGA },
+        { fitbitId: 52_001, id: WorkoutType.YOGA },
     ];
 
     private async getUniversalPoints(activityId: number): Promise<Point[]> {
@@ -34,16 +34,16 @@ export default class FitbitConvertor implements WorkoutConvertor<Activity> {
         }
 
         return points.map((point) => {
-            const { altitude, distance } = point;
+            const { altitude, distance, time, latitude, longitude, cadence, hr } = point;
 
             return new Point({
-                time: point.time,
-                latitude: point.latitude,
-                longitude: point.longitude,
+                time,
+                latitude,
+                longitude,
                 altitude: altitude != null ? unit(altitude, 'm') : undefined,
                 distance: distance != null ? unit(distance, 'm') : undefined,
-                cadence: point.cadence,
-                hr: point.hr,
+                cadence,
+                hr,
             });
         });
     }
