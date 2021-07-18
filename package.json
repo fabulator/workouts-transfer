@@ -32,34 +32,31 @@
     "tsc": "tsc --noEmit"
   },
   "dependencies": {
-    "@types/luxon": "^1.24.3",
-    "@types/mathjs": "^9.0.0",
-    "cross-fetch": "^3.0.5",
-    "inversify": "^5.0.1",
-    "luxon": "^1.24.1",
-    "mathjs": "^9.0.0",
+    "@types/luxon": "^1.27.1",
+    "cross-fetch": "^3.1.4",
+    "inversify": "^5.1.1",
+    "luxon": "^2.0.1",
+    "mathjs": "^9.4.4",
     "reflect-metadata": "^0.1.13",
     "xml2js": "^0.4.23"
   },
   "devDependencies": {
-    "commitlint-config-fabulator": "^1.0.0",
-    "endomondo-api-handler": "^7.3.0",
-    "eslint-config-fabulator": "^1.0.2",
-    "fitbit-api-handler": "^6.5.0",
-    "fitness-libraries": "^5.10.0",
-    "fitness-models": "^3.2.0",
-    "garmin-api-handler": "^4.4.1",
-    "jest-config-fabulator": "^1.0.0",
-    "semantic-release-config-fabulator": "^2.6.0",
-    "strava-api-handler": "^4.4.0",
-    "ts-jest": "^27.0.0"
+    "commitlint-config-fabulator": "^2.0.2",
+    "eslint-config-fabulator": "^1.2.3",
+    "fitbit-api-handler": "^7.0.0",
+    "fitness-libraries": "^5.10.1",
+    "fitness-models": "^4.1.1",
+    "garmin-api-handler": "^5.0.5",
+    "jest-config-fabulator": "^1.1.0",
+    "semantic-release-config-fabulator": "^2.6.2",
+    "strava-api-handler": "^5.0.2",
+    "ts-jest": "^27.0.3"
   },
   "peerDependencies": {
-    "endomondo-api-handler": "^7.3.0",
-    "fitbit-api-handler": "^6.5.0",
-    "fitness-libraries": "^5.10.0",
-    "fitness-models": "^3.2.0",
-    "garmin-api-handler": "^4.4.1",
-    "strava-api-handler": "^4.4.0"
+    "fitbit-api-handler": "^7.0.0",
+    "fitness-libraries": "^5.10.1",
+    "fitness-models": "^4.1.1",
+    "garmin-api-handler": "^5.0.5",
+    "strava-api-handler": "^5.0.2"
   }
 }
