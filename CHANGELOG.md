@@ -1,6 +1,17 @@
 # Change Log
 All notable changes to this project will be documented in this file.
 
+## v4.0.0 (2021-07-18)
+### Changed
+- [2664a67](https://github.com/fabulator/workouts-transfer/commit/2664a679402c6c3a32136ad73887e00e40df75b4) Update dependencies.
+- [7a52b21](https://github.com/fabulator/workouts-transfer/commit/7a52b21dfb390e7df972182ff9d524f6d12bd4b4) Remove Endomondo
+- [6ba3b35](https://github.com/fabulator/workouts-transfer/commit/6ba3b3550d60ed938ff6b74953f4dce704b65a7b) Update dev dependency ts-jest to v27  (#204)
+
+Co-authored-by: Renovate Bot <bot@renovateapp.com>
+- [1f08589](https://github.com/fabulator/workouts-transfer/commit/1f08589f93b23934aaef72c721a27160944b40dd) Update dependency @types/mathjs to v9 BREAKING (#203)
+
+Co-authored-by: Renovate Bot <bot@renovateapp.com>
+
 ## v3.0.0 (2021-06-06)
 ### Changed
 - [aa9e4e4](https://github.com/fabulator/workouts-transfer/commit/aa9e4e41cc83cf5aa8bc584ff5b12d09a40ae23b) Update dependency ini to 1.3.6 [SECURITY] (#197)
