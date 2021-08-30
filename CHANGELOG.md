@@ -1,6 +1,13 @@
 # Change Log
 All notable changes to this project will be documented in this file.
 
+## v4.1.0 (2021-08-30)
+### Other
+- [7c58056](https://github.com/fabulator/workouts-transfer/commit/7c58056c07a17ad6e34a118a82de6de4f3fc5e5a) WIP
+
+### Changed
+- [f8e1671](https://github.com/fabulator/workouts-transfer/commit/f8e16717831f8ae4fc59805e556f88d9eda18580) Remove travys
+
 ## v4.0.6 (2021-08-02)
 ### Fixed
 - [308fd86](https://github.com/fabulator/workouts-transfer/commit/308fd86c801032b982cc0401b2c040b1ddb7bdbb) Update lock for security updated
