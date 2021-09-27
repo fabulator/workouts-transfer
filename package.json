@@ -1,6 +1,6 @@
 {
   "name": "workouts-transfer",
-  "version": "4.1.4",
+  "version": "4.1.5",
   "description": "Workouts transfer between services as inversify modules.",
   "keywords": [
     "personal",
