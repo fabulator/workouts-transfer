@@ -10,6 +10,12 @@ export const ADAPTERS = {
     StravaTransferAdapter,
 };
 
+export const CONVERTORS = {
+    GarminConvertor,
+    FitbitConvertor,
+    StravaConvertor,
+};
+
 export { default as WorkoutTransfer } from './services/WorkoutTransfer';
 
 export default new ContainerModule((bind: interfaces.Bind) => {

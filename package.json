@@ -44,19 +44,19 @@
     "commitlint-config-fabulator": "^2.0.11",
     "eslint-config-fabulator": "^1.2.3",
     "fitbit-api-handler": "^7.1.1",
-    "fitness-libraries": "^5.13.0",
+    "fitness-libraries": "^5.13.1",
     "fitness-models": "^4.2.0",
-    "garmin-api-handler": "^5.0.16",
+    "garmin-api-handler": "^5.0.17",
     "jest-config-fabulator": "^1.1.0",
-    "semantic-release-config-fabulator": "^3.0.0",
-    "strava-api-handler": "^5.1.0",
+    "semantic-release-config-fabulator": "^3.0.2",
+    "strava-api-handler": "^5.1.1",
     "ts-jest": "^27.0.5"
   },
   "peerDependencies": {
     "fitbit-api-handler": "^7.1.1",
-    "fitness-libraries": "^5.13.0",
+    "fitness-libraries": "^5.13.1",
     "fitness-models": "^4.2.0",
-    "garmin-api-handler": "^5.0.16",
-    "strava-api-handler": "^5.1.0"
+    "garmin-api-handler": "^5.0.17",
+    "strava-api-handler": "^5.1.1"
   }
 }
