@@ -1,6 +1,12 @@
 # Change Log
 All notable changes to this project will be documented in this file.
 
+## v5.0.0 (2022-02-06)
+### Changed
+- [998344a](https://github.com/fabulator/workouts-transfer/commit/998344afd42da6884ba21571bb25418e6f0b2a04) Update dependency inversify to v6 BREAKING (#225)
+
+Co-authored-by: Renovate Bot <bot@renovateapp.com>
+
 ## v4.1.9 (2021-10-05)
 ### Fixed
 - [e5c01c1](https://github.com/fabulator/workouts-transfer/commit/e5c01c1042aee2e162722053f5ce7598c731534e) Update dependencies
