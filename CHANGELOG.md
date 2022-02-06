@@ -1,6 +1,12 @@
 # Change Log
 All notable changes to this project will be documented in this file.
 
+## v6.0.0 (2022-02-06)
+### Changed
+- [90c42e4](https://github.com/fabulator/workouts-transfer/commit/90c42e467dcdbbcaab37079d326eb7dc518fe10a) Update dependency mathjs to v10 BREAKING (#226)
+
+Co-authored-by: Renovate Bot <bot@renovateapp.com>
+
 ## v5.0.0 (2022-02-06)
 ### Changed
 - [998344a](https://github.com/fabulator/workouts-transfer/commit/998344afd42da6884ba21571bb25418e6f0b2a04) Update dependency inversify to v6 BREAKING (#225)
