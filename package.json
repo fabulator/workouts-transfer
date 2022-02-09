@@ -49,7 +49,7 @@
     "garmin-api-handler": "^5.0.17",
     "jest-config-fabulator": "^1.1.0",
     "semantic-release-config-fabulator": "^3.0.2",
-    "strava-api-handler": "^5.1.1",
+    "strava-api-handler": "^6.0.0",
     "ts-jest": "^27.0.5"
   },
   "peerDependencies": {
@@ -57,6 +57,6 @@
     "fitness-libraries": "^5.13.1",
     "fitness-models": "^4.2.0",
     "garmin-api-handler": "^5.0.17",
-    "strava-api-handler": "^5.1.1"
+    "strava-api-handler": "^6.0.0"
   }
 }
