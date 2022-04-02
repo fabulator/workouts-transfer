@@ -45,7 +45,7 @@
     "eslint-config-fabulator": "^1.2.3",
     "fitbit-api-handler": "^7.1.1",
     "fitness-libraries": "^5.13.1",
-    "fitness-models": "^4.2.0",
+    "fitness-models": "^6.0.0",
     "garmin-api-handler": "^5.0.17",
     "jest-config-fabulator": "^1.1.0",
     "semantic-release-config-fabulator": "^3.0.2",
@@ -55,7 +55,7 @@
   "peerDependencies": {
     "fitbit-api-handler": "^7.1.1",
     "fitness-libraries": "^5.13.1",
-    "fitness-models": "^4.2.0",
+    "fitness-models": "^6.0.0",
     "garmin-api-handler": "^5.0.17",
     "strava-api-handler": "^5.1.1"
   }
