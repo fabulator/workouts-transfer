@@ -46,7 +46,7 @@
     "fitbit-api-handler": "^7.1.1",
     "fitness-libraries": "^5.13.1",
     "fitness-models": "^6.0.0",
-    "garmin-api-handler": "^5.0.17",
+    "garmin-api-handler": "^6.0.15",
     "jest-config-fabulator": "^1.1.0",
     "semantic-release-config-fabulator": "^3.0.2",
     "strava-api-handler": "^5.1.1",
@@ -56,7 +56,7 @@
     "fitbit-api-handler": "^7.1.1",
     "fitness-libraries": "^5.13.1",
     "fitness-models": "^6.0.0",
-    "garmin-api-handler": "^5.0.17",
+    "garmin-api-handler": "^6.0.15",
     "strava-api-handler": "^5.1.1"
   }
 }
