@@ -1,6 +1,21 @@
 # Change Log
 All notable changes to this project will be documented in this file.
 
+## v7.0.0 (2022-04-02)
+### Changed
+- [7e2f886](https://github.com/fabulator/workouts-transfer/commit/7e2f886fd48dd2f6d8dfbdf7151be923653c3f2f) Update dependency fitness-models to v6 BREAKING (#229)
+
+Co-authored-by: Renovate Bot <bot@renovateapp.com>
+- [871dbed](https://github.com/fabulator/workouts-transfer/commit/871dbed791b926b1c8f8bfb77d509d1d3c9e9801) Update actions/checkout action to v3 (#233)  
+
+Co-authored-by: Renovate Bot <bot@renovateapp.com>
+- [d26e238](https://github.com/fabulator/workouts-transfer/commit/d26e2387f317cd2f7ba907a17baddcd63345e2c2) Update actions/setup-node action to v3 (#232)  
+
+Co-authored-by: Renovate Bot <bot@renovateapp.com>
+- [39a0fa8](https://github.com/fabulator/workouts-transfer/commit/39a0fa81972b02ed9deb1066474d64362d99eae8) Update dev dependency commitlint-config-fabulator to v3  (#227)
+
+Co-authored-by: Renovate Bot <bot@renovateapp.com>
+
 ## v6.0.0 (2022-02-06)
 ### Changed
 - [90c42e4](https://github.com/fabulator/workouts-transfer/commit/90c42e467dcdbbcaab37079d326eb7dc518fe10a) Update dependency mathjs to v10 BREAKING (#226)
