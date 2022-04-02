@@ -1,6 +1,10 @@
 # Change Log
 All notable changes to this project will be documented in this file.
 
+## v7.1.0 (2022-04-02)
+### Changed
+- [dcf48c8](https://github.com/fabulator/workouts-transfer/commit/dcf48c8e725619f735874352bd922a3ac715a6f0) Bump dependencies
+
 ## v7.0.0 (2022-04-02)
 ### Changed
 - [7e2f886](https://github.com/fabulator/workouts-transfer/commit/7e2f886fd48dd2f6d8dfbdf7151be923653c3f2f) Update dependency fitness-models to v6 BREAKING (#229)
