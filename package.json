@@ -51,7 +51,7 @@
     "jest-config-fabulator": "^1.2.0",
     "semantic-release-config-fabulator": "^3.3.0",
     "strava-api-handler": "^7.0.0",
-    "ts-jest": "^27.1.4"
+    "ts-jest": "^28.0.7"
   },
   "peerDependencies": {
     "fitbit-api-handler": "^8.0.0",
