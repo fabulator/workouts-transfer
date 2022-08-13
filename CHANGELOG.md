@@ -1,6 +1,18 @@
 # Change Log
 All notable changes to this project will be documented in this file.
 
+## v8.0.0 (2022-08-13)
+### Changed
+- [fb09084](https://github.com/fabulator/workouts-transfer/commit/fb09084c2c39547d6d7d8f349aef4b810ad68327) Update dependency luxon to v3 BREAKING (#250)
+
+Co-authored-by: renovate[bot] <29139614+renovate[bot]@users.noreply.github.com>
+- [93f0e09](https://github.com/fabulator/workouts-transfer/commit/93f0e099295d3b6b4af678a66778dbd763c9abe4) Update dev dependency husky to v8  (#240)
+
+Co-authored-by: Renovate Bot <bot@renovateapp.com>
+- [dbc4756](https://github.com/fabulator/workouts-transfer/commit/dbc475694c72a5b2e9a36353d9443f20c8f03cfb) Update dev dependency ts-jest to v28  (#239)
+
+Co-authored-by: renovate[bot] <29139614+renovate[bot]@users.noreply.github.com>
+
 ## v7.1.0 (2022-04-02)
 ### Changed
 - [dcf48c8](https://github.com/fabulator/workouts-transfer/commit/dcf48c8e725619f735874352bd922a3ac715a6f0) Bump dependencies
