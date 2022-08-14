@@ -1,6 +1,12 @@
 # Change Log
 All notable changes to this project will be documented in this file.
 
+## v9.0.0 (2022-08-14)
+### Changed
+- [adab30d](https://github.com/fabulator/workouts-transfer/commit/adab30d68e86d393e05de76ecbc87c33adfc7985) Update dependency mathjs to v11 BREAKING (#255)
+
+Co-authored-by: renovate[bot] <29139614+renovate[bot]@users.noreply.github.com>
+
 ## v8.0.0 (2022-08-13)
 ### Changed
 - [fb09084](https://github.com/fabulator/workouts-transfer/commit/fb09084c2c39547d6d7d8f349aef4b810ad68327) Update dependency luxon to v3 BREAKING (#250)
