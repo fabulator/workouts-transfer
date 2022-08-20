@@ -50,7 +50,7 @@
     "husky": "^8.0.1",
     "jest-config-fabulator": "^1.2.0",
     "semantic-release-config-fabulator": "^4.0.0",
-    "strava-api-handler": "^7.0.0",
+    "strava-api-handler": "^9.0.1",
     "ts-jest": "^28.0.7"
   },
   "peerDependencies": {
@@ -58,6 +58,6 @@
     "fitness-libraries": "^8.0.0",
     "fitness-models": "^8.1.0",
     "garmin-api-handler": "^7.0.0",
-    "strava-api-handler": "^7.0.0"
+    "strava-api-handler": "^9.0.1"
   }
 }
