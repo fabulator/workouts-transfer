@@ -1,6 +1,18 @@
 # Change Log
 All notable changes to this project will be documented in this file.
 
+## v10.0.0 (2022-08-20)
+### Changed
+- [a9c4842](https://github.com/fabulator/workouts-transfer/commit/a9c484229f4d7bd786f222bdc98f3f065be488db) Update dependency fitness-libraries to v8 BREAKING (#259)
+
+Co-authored-by: renovate[bot] <29139614+renovate[bot]@users.noreply.github.com>
+- [66a9cba](https://github.com/fabulator/workouts-transfer/commit/66a9cba94fc47d568b9de1117c1517d3ddd87612) Update dev dependency semantic-release-config-fabulator to v4  (#261)
+
+Co-authored-by: renovate[bot] <29139614+renovate[bot]@users.noreply.github.com>
+- [95e30aa](https://github.com/fabulator/workouts-transfer/commit/95e30aa1b92f3345b01aadef5bc83d4c80ed8049) Update dependency fitness-models to v8 BREAKING (#263)
+
+Co-authored-by: renovate[bot] <29139614+renovate[bot]@users.noreply.github.com>
+
 ## v9.0.0 (2022-08-14)
 ### Changed
 - [adab30d](https://github.com/fabulator/workouts-transfer/commit/adab30d68e86d393e05de76ecbc87c33adfc7985) Update dependency mathjs to v11 BREAKING (#255)
