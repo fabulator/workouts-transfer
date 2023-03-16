@@ -42,7 +42,7 @@
   },
   "devDependencies": {
     "commitlint-config-fabulator": "^5.0.0",
-    "eslint-config-fabulator": "^1.5.0",
+    "eslint-config-fabulator": "^2.3.0",
     "fitbit-api-handler": "^8.0.0",
     "fitness-libraries": "^9.0.0",
     "fitness-models": "^8.1.0",
