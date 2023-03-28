@@ -49,7 +49,7 @@
     "garmin-api-handler": "^7.0.0",
     "husky": "^8.0.1",
     "jest-config-fabulator": "^1.2.0",
-    "semantic-release-config-fabulator": "^5.0.0",
+    "semantic-release-config-fabulator": "^6.0.0",
     "strava-api-handler": "^9.0.1",
     "ts-jest": "^28.0.7"
   },
